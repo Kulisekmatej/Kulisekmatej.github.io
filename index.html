@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matěj Kulíšek — Developer & IT Student</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #16161f;
+            --accent: #00e5a0;
+            --accent-dim: #00e5a020;
+            --accent-glow: #00e5a040;
+            --text-primary: #e8e8ef;
+            --text-secondary: #8888a0;
+            --text-muted: #555568;
+            --border: #1e1e2e;
+            --font-mono: 'JetBrains Mono', monospace;
+            --font-sans: 'Sora', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: var(--font-sans);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* ===== GRID BACKGROUND ===== */
+        .grid-bg {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image:
+                linear-gradient(var(--border) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border) 1px, transparent 1px);
+            background-size: 60px 60px;
+            opacity: 0.3;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .glow-orb {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--accent-glow), transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.4;
+            transition: transform 0.3s ease-out;
+        }
+
+        .glow-orb--top { top: -200px; right: -100px; }
+        .glow-orb--bottom { bottom: -300px; left: -200px; }
+
+        /* ===== NAV ===== */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 10, 15, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-logo {
+            font-family: var(--font-mono);
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--accent);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-logo span {
+            color: var(--text-muted);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+            font-family: var(--font-mono);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-status {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--accent);
+        }
+
+        .nav-status::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 10px var(--accent);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        /* ===== SECTIONS ===== */
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 6rem 0;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 5rem;
+        }
+
+        .hero-content {
+            width: 100%;
+        }
+
+        .hero-tag {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeUp 0.8s 0.2s forwards;
+        }
+
+        .hero-name {
+            font-size: clamp(2.8rem, 7vw, 5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeUp 0.8s 0.4s forwards;
+        }
+
+        .hero-name .highlight {
+            color: var(--accent);
+            position: relative;
+        }
+
+        .hero-desc {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 550px;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            opacity: 0;
+            animation: fadeUp 0.8s 0.6s forwards;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeUp 0.8s 0.8s forwards;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.85rem 1.8rem;
+            border-radius: 8px;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--bg-primary);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 0 30px var(--accent-glow);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .hero-terminal {
+            margin-top: 4rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            opacity: 0;
+            animation: fadeUp 0.8s 1s forwards;
+            overflow: hidden;
+        }
+
+        .terminal-bar {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 1rem;
+        }
+
+        .terminal-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .terminal-dot--red { background: #ff5f57; }
+        .terminal-dot--yellow { background: #febc2e; }
+        .terminal-dot--green { background: #28c840; }
+
+        .terminal-line {
+            color: var(--text-muted);
+            margin-bottom: 0.4rem;
+        }
+
+        .terminal-line .cmd { color: var(--accent); }
+        .terminal-line .path { color: var(--text-secondary); }
+        .terminal-line .output { color: var(--text-primary); }
+
+        /* ===== SECTION HEADERS ===== */
+        .section-header {
+            margin-bottom: 3rem;
+        }
+
+        .section-label {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.8rem;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        /* ===== SKILLS ===== */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.2rem;
+        }
+
+        .skill-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.8rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .skill-card:hover {
+            border-color: var(--accent-dim);
+            transform: translateY(-4px);
+        }
+
+        .skill-card:hover::before {
+            opacity: 1;
+        }
+
+        .skill-icon {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .skill-name {
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 1rem;
+        }
+
+        .skill-tag {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            background: var(--accent-dim);
+            color: var(--accent);
+        }
+
+        /* ===== PROJECTS ===== */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .project-card:hover {
+            border-color: var(--accent-dim);
+            transform: translateY(-4px);
+        }
+
+        .project-preview {
+            height: 180px;
+            background: var(--bg-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-preview::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--accent-dim), transparent);
+        }
+
+        .project-body {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .project-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .project-tech {
+            display: flex;
+            gap: 0.4rem;
+        }
+
+        .project-link {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--accent);
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .project-link:hover { opacity: 0.7; }
+
+        /* ===== ABOUT ===== */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .about-text {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .about-text p + p {
+            margin-top: 1rem;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.3rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: var(--font-mono);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.3rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ===== CONTACT ===== */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .contact-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--accent-dim);
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+
+        .contact-info .contact-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-info .contact-value {
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            color: var(--accent);
+            margin-top: 0.2rem;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            nav { padding: 1rem; }
+            .nav-links { display: none; }
+            .nav-status { display: none; }
+            .container { padding: 0 1.2rem; }
+            section { padding: 4rem 0; }
+            .about-content { grid-template-columns: 1fr; }
+            .hero-name { letter-spacing: -1px; }
+        }
+
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--bg-primary); }
+        ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+    </style>
+</head>
+<body>
+
+<div class="grid-bg"></div>
+<div class="glow-orb glow-orb--top"></div>
+<div class="glow-orb glow-orb--bottom"></div>
+
+<!-- NAV -->
+<nav>
+    <a href="#" class="nav-logo">&lt;Matěj Kulíšek <span>/&gt;</span></a>
+    <ul class="nav-links">
+        <li><a href="#skills">skills</a></li>
+        <li><a href="#projects">projects</a></li>
+        <li><a href="#about">about</a></li>
+        <li><a href="#contact">contact</a></li>
+    </ul>
+    <div class="nav-status">open to work</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-tag">// Ahoj, já jsem Matěj!</div>
+            <h1 class="hero-name">
+                Matěj<br><span class="highlight">Kulíšek</span>
+            </h1>
+            <p class="hero-desc">
+                IT student & budoucí developer. Zaměřuji se na vývoj aplikací, sítě a kybernetickou bezpečnost. Momentálně se připravuji na maturitu a stavím věci, které mě baví.
+            </p>
+            <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary">→ Moje projekty</a>
+                <a href="https://github.com/tvuj-username" class="btn btn-outline" target="_blank">GitHub ↗</a>
+            </div>
+
+            <div class="hero-terminal">
+                <div class="terminal-bar">
+                    <div class="terminal-dot terminal-dot--red"></div>
+                    <div class="terminal-dot terminal-dot--yellow"></div>
+                    <div class="terminal-dot terminal-dot--green"></div>
+                </div>
+                <div class="terminal-line"><span class="path">~/portfolio</span> <span class="cmd">$ whoami</span></div>
+                <div class="terminal-line"><span class="output">IT student @ střední škola | C++ · Python · Networking</span></div>
+                <div class="terminal-line"><span class="path">~/portfolio</span> <span class="cmd">$ cat interests.txt</span></div>
+                <div class="terminal-line"><span class="output">app-development, networking, security, game-dev</span></div>
+                <div class="terminal-line"><span class="path">~/portfolio</span> <span class="cmd">$ echo $STATUS</span></div>
+                <div class="terminal-line"><span class="output">Jsem připraven na nové výzvy</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+    <div class="container">
+        <div class="section-header reveal">
+            <div class="section-label">// 01 — Dovednosti</div>
+            <h2 class="section-title">Co umím</h2>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-card reveal">
+                <div class="skill-icon">⚡</div>
+                <div class="skill-name">Programování</div>
+                <div class="skill-desc">Vývoj aplikací v C++ s Qt frameworkem, algoritmy, datové struktury a OOP principy.</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">C++</span>
+                    <span class="skill-tag">Qt</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Lua</span>
+                </div>
+            </div>
+            <div class="skill-card reveal">
+                <div class="skill-icon">🌐</div>
+                <div class="skill-name">Sítě & Infrastruktura</div>
+                <div class="skill-desc">ISO/OSI model, TCP/IP protokoly, routing, switching a správa síťové infrastruktury.</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">TCP/IP</span>
+                    <span class="skill-tag">Routing</span>
+                    <span class="skill-tag">DNS</span>
+                    <span class="skill-tag">VLAN</span>
+                </div>
+            </div>
+            <div class="skill-card reveal">
+                <div class="skill-icon">🛡️</div>
+                <div class="skill-name">Bezpečnost</div>
+                <div class="skill-desc">Zájem o kybernetickou bezpečnost, šifrování, VPN technologie a bezpečné systémy.</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">VPN</span>
+                    <span class="skill-tag">Encryption</span>
+                    <span class="skill-tag">Privacy</span>
+                </div>
+            </div>
+            <div class="skill-card reveal">
+                <div class="skill-icon">🎮</div>
+                <div class="skill-name">Game Development</div>
+                <div class="skill-desc">Tvorba her a herních mechanik, práce s herními enginy a skriptování v Lua.</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Roblox Studio</span>
+                    <span class="skill-tag">Lua</span>
+                    <span class="skill-tag">Game Design</span>
+                </div>
+            </div>
+            <div class="skill-card reveal">
+                <div class="skill-icon">🗄️</div>
+                <div class="skill-name">Databáze</div>
+                <div class="skill-desc">Návrh a správa databází, SQL dotazy, relační modely a základy databázové optimalizace.</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">Návrh DB</span>
+                </div>
+            </div>
+            <div class="skill-card reveal">
+                <div class="skill-icon">🌍</div>
+                <div class="skill-name">Web & Frontend</div>
+                <div class="skill-desc">Základy webového vývoje, tvorba responzivních stránek a moderní HTML/CSS.</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">HTML</span>
+                    <span class="skill-tag">CSS</span>
+                    <span class="skill-tag">JavaScript</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+    <div class="container">
+        <div class="section-header reveal">
+            <div class="section-label">// 02 — Projekty</div>
+            <h2 class="section-title">Na čem pracuji</h2>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card reveal">
+                <div class="project-preview">🖥️</div>
+                <div class="project-body">
+                    <div class="project-title">Portfolio Web</div>
+                    <div class="project-desc">Osobní webová stránka postavená od nuly v čistém HTML, CSS a JavaScriptu.</div>
+                    <div class="project-footer">
+                        <div class="project-tech">
+                            <span class="skill-tag">HTML</span>
+                            <span class="skill-tag">CSS</span>
+                            <span class="skill-tag">JS</span>
+                        </div>
+                        <a href="#" class="project-link">Zdrojový kód →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card reveal">
+                <div class="project-preview">🎮</div>
+                <div class="project-body">
+                    <div class="project-title">Roblox Tycoon Game</div>
+                    <div class="project-desc">Tycoon hra vytvořená v Roblox Studiu s vlastními herními mechanikami a ekonomikou.</div>
+                    <div class="project-footer">
+                        <div class="project-tech">
+                            <span class="skill-tag">Lua</span>
+                            <span class="skill-tag">Roblox</span>
+                        </div>
+                        <a href="#" class="project-link">Hrát →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card reveal">
+                <div class="project-preview">📊</div>
+                <div class="project-body">
+                    <div class="project-title">Síťový Analyzátor</div>
+                    <div class="project-desc">Nástroj pro analýzu síťového provozu a monitorování připojení v C++.</div>
+                    <div class="project-footer">
+                        <div class="project-tech">
+                            <span class="skill-tag">C++</span>
+                            <span class="skill-tag">Qt</span>
+                        </div>
+                        <a href="#" class="project-link">Zdrojový kód →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <div class="container">
+        <div class="section-header reveal">
+            <div class="section-label">// 03 — O mně</div>
+            <h2 class="section-title">Kdo jsem</h2>
+        </div>
+        <div class="about-content reveal">
+            <div class="about-text">
+                <p>
+                    Jsem student IT na střední škole v Česku, kde se zaměřuji na vývoj aplikací a správu počítačových sítí. Momentálně se připravuji na maturitní zkoušku z IT.
+                </p>
+                <p>
+                    Baví mě programování, síťová bezpečnost a tvorba her. Ve volném čase se učím nové technologie, experimentuji s projekty a snažím se posouvat své schopnosti dál.
+                </p>
+                <p>
+                    Mým cílem je stát se full-stack developerem nebo bezpečnostním specialistou. Hledám příležitosti, kde mohu růst a přispívat k zajímavým projektům.
+                </p>
+            </div>
+            <div class="about-stats">
+                <div class="stat-card">
+                    <div class="stat-number">4+</div>
+                    <div class="stat-label">Roky studia IT</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Projektů</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3+</div>
+                    <div class="stat-label">Prog. jazyků</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">Motivace</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <div class="container">
+        <div class="section-header reveal">
+            <div class="section-label">// 04 — Kontakt</div>
+            <h2 class="section-title">Spojme se</h2>
+        </div>
+        <div class="contact-grid reveal">
+            <a href="mailto:matej.kulisek99@seznam.cz" class="contact-card">
+                <div class="contact-icon">✉️</div>
+                <div class="contact-info">
+                    <div class="contact-label">Email</div>
+                    <div class="contact-value">matej.kulisek99@seznam.cz</div>
+                </div>
+            </a>
+            <a href="https://github.com/Kulisekmatej" target="_blank" class="contact-card">
+                <div class="contact-icon">🐙</div>
+                <div class="contact-info">
+                    <div class="contact-label">GitHub</div>
+                    <div class="contact-value">github.com/Kulisekmatej</div>
+                </div>
+            </a>
+            <a href="https://discord.com" target="_blank" class="contact-card">
+                <div class="contact-icon">💬</div>
+                <div class="contact-info">
+                    <div class="contact-label">Discord</div>
+                    <div class="contact-value">moewskeeter</div>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        &lt;/&gt; Postaveno od nuly · © 2026 Matěj Kulíšek
+    </div>
+</footer>
+
+<script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, i * 100);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    reveals.forEach(el => observer.observe(el));
+
+    // Mouse glow follow (subtle)
+    document.addEventListener('mousemove', (e) => {
+        const orb = document.querySelector('.glow-orb--top');
+        const x = (e.clientX / window.innerWidth - 0.5) * 40;
+        const y = (e.clientY / window.innerHeight - 0.5) * 40;
+        orb.style.transform = `translate(${x}px, ${y}px)`;
+    });
+</script>
+
+</body>
+</html>
