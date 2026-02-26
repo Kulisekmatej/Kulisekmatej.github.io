@@ -3,7 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matěj Kulíšek — Developer & IT Student</title>
+    <title>Matěj Kulíšek — Developer & IT Student | Tvorba webů, správa sítí</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Matěj Kulíšek — IT student, vývojář a kybernetický nadšenec. Nabízím tvorbu moderních webových stránek, správu sociálních sítí a kompletní online prezenci pro firmy a živnostníky.">
+    <meta name="keywords" content="Matěj Kulíšek, webové stránky, tvorba webů, správa sociálních sítí, IT student, developer, kybernetická bezpečnost, C++, Python, networking">
+    <meta name="author" content="Matěj Kulíšek">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://kulisekmatej.github.io/">
+
+    <!-- Open Graph (Facebook, LinkedIn) -->
+    <meta property="og:title" content="Matěj Kulíšek — Developer & IT Student">
+    <meta property="og:description" content="IT student zaměřený na vývoj aplikací, sítě a kybernetickou bezpečnost. Nabízím tvorbu webů a správu sociálních sítí.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kulisekmatej.github.io/">
+    <meta property="og:locale" content="cs_CZ">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Matěj Kulíšek — Developer & IT Student">
+    <meta name="twitter:description" content="IT student zaměřený na vývoj aplikací, sítě a kybernetickou bezpečnost. Nabízím tvorbu webů a správu sociálních sítí.">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QF257163DS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QF257163DS');
+    </script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Matěj Kulíšek",
+        "url": "https://kulisekmatej.github.io",
+        "jobTitle": "IT Student & Web Developer",
+        "description": "IT student zaměřený na vývoj aplikací, sítě a kybernetickou bezpečnost.",
+        "knowsAbout": ["C++", "Python", "Networking", "Cybersecurity", "Web Development", "Qt Framework"],
+        "sameAs": ["https://github.com/Kulisekmatej"]
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -118,7 +161,6 @@
         .project-link { font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent); text-decoration: none; transition: opacity 0.3s; }
         .project-link:hover { opacity: 0.7; }
 
-        /* ===== SERVICES ===== */
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
         .service-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: all 0.3s; position: relative; overflow: hidden; display: flex; flex-direction: column; }
         .service-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: linear-gradient(90deg, var(--accent), transparent); opacity: 0; transition: opacity 0.3s; }
@@ -194,12 +236,8 @@
 <section class="hero">
     <div class="container">
         <div class="hero-content">
-            <h1 class="hero-name">
-                <br><span class="highlight">Matěj Kulíšek</span>
-            </h1>
-            <p class="hero-desc">
-                IT student & budoucí developer. Zaměřuji se na vývoj aplikací, sítě a kybernetickou bezpečnost. Momentálně se připravuji na maturitu a buduji si svou budoucí kariéru...
-            </p>
+            <h1 class="hero-name"><br><span class="highlight">Matěj Kulíšek</span></h1>
+            <p class="hero-desc">IT student &amp; budoucí developer. Zaměřuji se na vývoj aplikací, sítě a kybernetickou bezpečnost. Momentálně se připravuji na maturitu a buduji si svou budoucí kariéru...</p>
             <div class="hero-actions">
                 <a href="#projects" class="btn btn-primary">→ Moje projekty</a>
                 <a href="https://github.com/kulisekmatej" class="btn btn-outline" target="_blank">GitHub ↗</a>
@@ -215,7 +253,7 @@
                 <div class="terminal-line"><span class="path">~/portfolio</span> <span class="cmd">$ cat interests.txt</span></div>
                 <div class="terminal-line"><span class="output">app-development, networking, security, game-dev</span></div>
                 <div class="terminal-line"><span class="path">~/portfolio</span> <span class="cmd">$ echo $STATUS</span></div>
-                <div class="terminal-line"><span class="output">Jsem připraven na nové životní výzvy</span></div>
+                <div class="terminal-line"><span class="output">Jsem připraven na nové výzvy, které mi připraví život</span></div>
             </div>
         </div>
     </div>
@@ -236,7 +274,7 @@
             </div>
             <div class="skill-card reveal">
                 <div class="skill-icon">🌐</div>
-                <div class="skill-name">Sítě & Infrastruktura</div>
+                <div class="skill-name">Sítě &amp; Infrastruktura</div>
                 <div class="skill-desc">ISO/OSI model, TCP/IP protokoly, routing, switching a správa síťové infrastruktury.</div>
                 <div class="skill-tags"><span class="skill-tag">TCP/IP</span><span class="skill-tag">Routing</span><span class="skill-tag">DNS</span><span class="skill-tag">VLAN</span></div>
             </div>
@@ -260,7 +298,7 @@
             </div>
             <div class="skill-card reveal">
                 <div class="skill-icon">🌍</div>
-                <div class="skill-name">Web & Frontend</div>
+                <div class="skill-name">Web &amp; Frontend</div>
                 <div class="skill-desc">Základy webového vývoje, tvorba responzivních stránek a moderní HTML/CSS.</div>
                 <div class="skill-tags"><span class="skill-tag">HTML</span><span class="skill-tag">CSS</span><span class="skill-tag">JavaScript</span></div>
             </div>
@@ -290,7 +328,7 @@
                 <div class="project-preview">🎮</div>
                 <div class="project-body">
                     <div class="project-title">Roblox Tycoon Game</div>
-                    <div class="project-desc">Tycoon hra byla vytvořená v Roblox Studiu s vlastními herními mechanikami a ekonomikou. Hra je stále ve vývoji.</div>
+                    <div class="project-desc">Tycoon hra vytvořená v Roblox Studiu s vlastními herními mechanikami a ekonomikou.Hra je stále ve vývoji.</div>
                     <div class="project-footer">
                         <div class="project-tech"><span class="skill-tag">Lua</span><span class="skill-tag">Roblox</span></div>
                         <a href="#" class="project-link">Hrát →</a>
@@ -374,8 +412,8 @@
         <div class="about-content reveal">
             <div class="about-text">
                 <p>Jsem student IT na střední škole, kde se zaměřuji na vývoj aplikací a správu počítačových sítí. Momentálně se připravuji na maturitní zkoušku z IT.</p>
-                <p>Baví mě programování, síťová bezpečnost a tvorba her. Ve volném čase se učím nové věci, zkouším vytvářet nové projekty a snažím se posouvat své schopnosti dál.</p>
-                <p>Mým cílem je stát se full-stack developerem nebo bezpečnostním specialistou. Hledám příležitosti k růst a chci přispívat k zajímavým projektům.</p>
+                <p>Baví mě programování, síťová bezpečnost a tvorba her. Ve volném čase se učím nové technologie, experimentuji s projekty a snažím se posouvat své schopnosti dál.</p>
+                <p>Mým cílem je stát se full-stack developerem nebo bezpečnostním specialistou. Hledám příležitosti, kde mohu růst a chci přispívat firmám.</p>
             </div>
             <div class="about-stats">
                 <div class="stat-card"><div class="stat-number">4+</div><div class="stat-label">Roky studia IT</div></div>
@@ -394,7 +432,7 @@
             <h2 class="section-title">Spojme se</h2>
         </div>
         <div class="contact-grid reveal">
-            <a href="mailto:kulisekmatej@proton.me" class="contact-card">
+            <a href="mailto:matej.kulisek99@icloud.com" class="contact-card">
                 <div class="contact-icon">✉️</div>
                 <div class="contact-info">
                     <div class="contact-label">Email</div>
@@ -420,28 +458,26 @@
 </section>
 
 <footer>
-    <div class="container">
-        &lt;/&gt; · © 2026 Matěj Kulíšek
-    </div>
+    <div class="container">&lt;/&gt;· © 2026 Matěj Kulíšek</div>
 </footer>
 
 <script>
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, i) => {
+    var reveals = document.querySelectorAll('.reveal');
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry, i) {
             if (entry.isIntersecting) {
-                setTimeout(() => { entry.target.classList.add('visible'); }, i * 100);
+                setTimeout(function() { entry.target.classList.add('visible'); }, i * 100);
                 observer.unobserve(entry.target);
             }
         });
     }, { threshold: 0.1 });
-    reveals.forEach(el => observer.observe(el));
+    reveals.forEach(function(el) { observer.observe(el); });
 
-    document.addEventListener('mousemove', (e) => {
-        const orb = document.querySelector('.glow-orb--top');
-        const x = (e.clientX / window.innerWidth - 0.5) * 40;
-        const y = (e.clientY / window.innerHeight - 0.5) * 40;
-        orb.style.transform = `translate(${x}px, ${y}px)`;
+    document.addEventListener('mousemove', function(e) {
+        var orb = document.querySelector('.glow-orb--top');
+        var x = (e.clientX / window.innerWidth - 0.5) * 40;
+        var y = (e.clientY / window.innerHeight - 0.5) * 40;
+        orb.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
     });
 </script>
 
