@@ -4,27 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matěj Kulíšek — Developer & IT Student | Tvorba webů, správa sítí</title>
-
-    <!-- SEO Meta Tags -->
     <meta name="description" content="Matěj Kulíšek — IT student, vývojář a kybernetický nadšenec. Nabízím tvorbu moderních webových stránek, správu sociálních sítí a kompletní online prezenci pro firmy a živnostníky.">
     <meta name="keywords" content="Matěj Kulíšek, webové stránky, tvorba webů, správa sociálních sítí, IT student, developer, kybernetická bezpečnost, C++, Python, networking">
     <meta name="author" content="Matěj Kulíšek">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://kulisekmatej.github.io/">
-
-    <!-- Open Graph (Facebook, LinkedIn) -->
     <meta property="og:title" content="Matěj Kulíšek — Developer & IT Student">
     <meta property="og:description" content="IT student zaměřený na vývoj aplikací, sítě a kybernetickou bezpečnost. Nabízím tvorbu webů a správu sociálních sítí.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://kulisekmatej.github.io/">
     <meta property="og:locale" content="cs_CZ">
-
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Matěj Kulíšek — Developer & IT Student">
     <meta name="twitter:description" content="IT student zaměřený na vývoj aplikací, sítě a kybernetickou bezpečnost. Nabízím tvorbu webů a správu sociálních sítí.">
 
-    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QF257163DS"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -33,7 +26,6 @@
         gtag('config', 'G-QF257163DS');
     </script>
 
-    <!-- Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -67,34 +59,14 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
+        body { background: var(--bg-primary); color: var(--text-primary); font-family: var(--font-sans); line-height: 1.7; overflow-x: hidden; }
 
-        body {
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            font-family: var(--font-sans);
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
-
-        .grid-bg {
-            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-            background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
-            background-size: 60px 60px; opacity: 0.3; pointer-events: none; z-index: 0;
-        }
-
-        .glow-orb {
-            position: fixed; width: 600px; height: 600px; border-radius: 50%;
-            background: radial-gradient(circle, var(--accent-glow), transparent 70%);
-            pointer-events: none; z-index: 0; opacity: 0.4; transition: transform 0.3s ease-out;
-        }
+        .grid-bg { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size: 60px 60px; opacity: 0.3; pointer-events: none; z-index: 0; }
+        .glow-orb { position: fixed; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, var(--accent-glow), transparent 70%); pointer-events: none; z-index: 0; opacity: 0.4; transition: transform 0.3s ease-out; }
         .glow-orb--top { top: -200px; right: -100px; }
         .glow-orb--bottom { bottom: -300px; left: -200px; }
 
-        nav {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-            padding: 1.2rem 2rem; display: flex; justify-content: space-between; align-items: center;
-            background: rgba(10, 10, 15, 0.8); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border);
-        }
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.2rem 2rem; display: flex; justify-content: space-between; align-items: center; background: rgba(10,10,15,0.8); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
         .nav-logo { font-family: var(--font-mono); font-weight: 700; font-size: 1.1rem; color: var(--accent); text-decoration: none; letter-spacing: -0.5px; }
         .nav-logo span { color: var(--text-muted); }
         .nav-links { display: flex; gap: 2rem; list-style: none; }
@@ -110,9 +82,13 @@
 
         .hero { min-height: 100vh; display: flex; align-items: center; padding-top: 5rem; }
         .hero-content { width: 100%; }
-        .hero-tag { font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent); margin-bottom: 1.5rem; opacity: 0; animation: fadeUp 0.8s 0.2s forwards; }
+
+        /* FIX 1: hero-tag */
+        .hero-tag { font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; opacity: 0; animation: fadeUp 0.8s 0.2s forwards; }
+        .hero-tag::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px var(--accent); animation: pulse 2s infinite; flex-shrink: 0; }
+
         .hero-name { font-size: clamp(2.8rem, 7vw, 5rem); font-weight: 700; line-height: 1.1; letter-spacing: -2px; margin-bottom: 1.5rem; opacity: 0; animation: fadeUp 0.8s 0.4s forwards; }
-        .hero-name .highlight { color: var(--accent); position: relative; }
+        .hero-name .highlight { color: var(--accent); }
         .hero-desc { font-size: 1.15rem; color: var(--text-secondary); max-width: 550px; margin-bottom: 2.5rem; font-weight: 300; opacity: 0; animation: fadeUp 0.8s 0.6s forwards; }
         .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.8s 0.8s forwards; }
 
@@ -148,17 +124,21 @@
         .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
         .skill-tag { font-family: var(--font-mono); font-size: 0.7rem; padding: 0.25rem 0.6rem; border-radius: 4px; background: var(--accent-dim); color: var(--accent); }
 
+        /* FIX 2: Projekty s obrázky */
         .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
         .project-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: all 0.3s; }
         .project-card:hover { border-color: var(--accent-dim); transform: translateY(-4px); }
-        .project-preview { height: 180px; background: var(--bg-secondary); display: flex; align-items: center; justify-content: center; font-size: 3rem; border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
-        .project-preview::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, var(--accent-dim), transparent); }
+        .project-preview { height: 180px; position: relative; overflow: hidden; border-bottom: 1px solid var(--border); }
+        .project-preview img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.6) saturate(0.7); transition: filter 0.4s, transform 0.4s; display: block; }
+        .project-card:hover .project-preview img { filter: brightness(0.8) saturate(1); transform: scale(1.04); }
+        .project-preview-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, var(--accent-dim), transparent); pointer-events: none; }
+        .project-badge { display: inline-block; font-family: var(--font-mono); font-size: 0.65rem; padding: 0.2rem 0.55rem; border-radius: 4px; margin-bottom: 0.6rem; background: rgba(0,229,160,0.1); color: var(--accent); border: 1px solid rgba(0,229,160,0.2); text-transform: uppercase; letter-spacing: 0.08em; }
         .project-body { padding: 1.5rem; }
         .project-title { font-weight: 600; font-size: 1.1rem; margin-bottom: 0.5rem; }
         .project-desc { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1.2rem; line-height: 1.6; }
         .project-footer { display: flex; justify-content: space-between; align-items: center; }
-        .project-tech { display: flex; gap: 0.4rem; }
-        .project-link { font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent); text-decoration: none; transition: opacity 0.3s; }
+        .project-tech { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+        .project-link { font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent); text-decoration: none; transition: opacity 0.3s; white-space: nowrap; }
         .project-link:hover { opacity: 0.7; }
 
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
@@ -186,12 +166,25 @@
         .stat-number { font-family: var(--font-mono); font-size: 2rem; font-weight: 700; color: var(--accent); }
         .stat-label { font-size: 0.75rem; color: var(--text-muted); margin-top: 0.3rem; text-transform: uppercase; letter-spacing: 1px; }
 
-        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
+        /* FIX 3: Kontakt — formulář + Discord odstraněn */
+        .contact-wrapper { display: grid; grid-template-columns: 1fr 1.4fr; gap: 3rem; align-items: start; }
+        .contact-links-col { display: flex; flex-direction: column; gap: 1rem; }
         .contact-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; text-decoration: none; color: var(--text-primary); transition: all 0.3s; display: flex; align-items: center; gap: 1rem; }
         .contact-card:hover { border-color: var(--accent); transform: translateY(-2px); }
         .contact-icon { font-size: 1.5rem; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; background: var(--accent-dim); border-radius: 10px; flex-shrink: 0; }
         .contact-info .contact-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
         .contact-info .contact-value { font-family: var(--font-mono); font-size: 0.9rem; color: var(--accent); margin-top: 0.2rem; }
+
+        .contact-form { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; }
+        .contact-form h3 { font-size: 1rem; font-weight: 600; margin-bottom: 1.5rem; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .form-group { margin-bottom: 1rem; }
+        .form-group label { display: block; font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.4rem; }
+        .form-group input, .form-group textarea { width: 100%; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; padding: 0.75rem 1rem; color: var(--text-primary); font-family: var(--font-sans); font-size: 0.9rem; transition: border-color 0.2s; outline: none; resize: none; }
+        .form-group input:focus, .form-group textarea:focus { border-color: var(--accent); }
+        .form-group textarea { height: 110px; }
+        .btn-submit { width: 100%; background: var(--accent); color: var(--bg-primary); border: none; padding: 0.85rem; border-radius: 8px; font-family: var(--font-mono); font-size: 0.85rem; font-weight: 700; cursor: pointer; transition: box-shadow 0.25s, transform 0.2s; margin-top: 0.25rem; }
+        .btn-submit:hover { box-shadow: 0 0 30px var(--accent-glow); transform: translateY(-2px); }
 
         footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); position: relative; z-index: 1; }
 
@@ -206,6 +199,8 @@
             .container { padding: 0 1.2rem; }
             section { padding: 4rem 0; }
             .about-content { grid-template-columns: 1fr; }
+            .contact-wrapper { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
             .hero-name { letter-spacing: -1px; }
         }
 
@@ -230,13 +225,16 @@
         <li><a href="#about">about</a></li>
         <li><a href="#contact">contact</a></li>
     </ul>
-    <div class="nav-status">open to work</div>
+    <!-- FIX 1: "open to work" → "dostupný pro projekty" -->
+    <div class="nav-status">dostupný pro projekty</div>
 </nav>
 
 <section class="hero">
     <div class="container">
         <div class="hero-content">
-            <h1 class="hero-name"><br><span class="highlight">Matěj Kulíšek</span></h1>
+            <!-- FIX 2: hero-tag přidán zpět -->
+            <div class="hero-tag">IT Student &amp; Freelance Developer</div>
+            <h1 class="hero-name"><span class="highlight">Matěj Kulíšek</span></h1>
             <p class="hero-desc">IT student &amp; budoucí developer. Zaměřuji se na vývoj aplikací, sítě a kybernetickou bezpečnost. Momentálně se připravuji na maturitu a buduji si svou budoucí kariéru...</p>
             <div class="hero-actions">
                 <a href="#projects" class="btn btn-primary">→ Moje projekty</a>
@@ -312,37 +310,65 @@
             <div class="section-label">// 02 — Projekty</div>
             <h2 class="section-title">Na čem pracuji</h2>
         </div>
+        <!-- FIX 3: Projekty s obrázkovými náhledy, Airless Malby jako první -->
         <div class="projects-grid">
             <div class="project-card reveal">
-                <div class="project-preview">🖥️</div>
+                <div class="project-preview">
+                    <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=700&auto=format&fit=crop&q=70" alt="Airless Malby Kreisinger — firemní web">
+                    <div class="project-preview-overlay"></div>
+                </div>
                 <div class="project-body">
+                    <div class="project-badge">Zakázka</div>
+                    <div class="project-title">Airless Malby Kreisinger</div>
+                    <div class="project-desc">Profesionální jednostránkový web pro malířskou firmu. Responzivní design, SEO, Google Analytics, kontaktní formulář a Google Maps.</div>
+                    <div class="project-footer">
+                        <div class="project-tech"><span class="skill-tag">HTML</span><span class="skill-tag">CSS</span><span class="skill-tag">JS</span><span class="skill-tag">SEO</span></div>
+                        <a href="#" class="project-link">Zobrazit →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card reveal">
+                <div class="project-preview">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=700&auto=format&fit=crop&q=70" alt="Portfolio web">
+                    <div class="project-preview-overlay"></div>
+                </div>
+                <div class="project-body">
+                    <div class="project-badge">Osobní</div>
                     <div class="project-title">Portfolio Web</div>
                     <div class="project-desc">Osobní webová stránka postavená od nuly v čistém HTML, CSS a JavaScriptu.</div>
                     <div class="project-footer">
                         <div class="project-tech"><span class="skill-tag">HTML</span><span class="skill-tag">CSS</span><span class="skill-tag">JS</span></div>
-                        <a href="https://github.com/Kulisekmatej/Kulisekmatej.github.io" class="project-link">Zdrojový kód →</a>
+                        <a href="https://github.com/Kulisekmatej/Kulisekmatej.github.io" class="project-link" target="_blank">Zdrojový kód →</a>
                     </div>
                 </div>
             </div>
             <div class="project-card reveal">
-                <div class="project-preview">🎮</div>
-                <div class="project-body">
-                    <div class="project-title">Roblox Tycoon Game</div>
-                    <div class="project-desc">Tycoon hra vytvořená v Roblox Studiu s vlastními herními mechanikami a ekonomikou.Hra je stále ve vývoji.</div>
-                    <div class="project-footer">
-                        <div class="project-tech"><span class="skill-tag">Lua</span><span class="skill-tag">Roblox</span></div>
-                        <a href="#" class="project-link">Hrát →</a>
-                    </div>
+                <div class="project-preview">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=700&auto=format&fit=crop&q=70" alt="Síťový analyzátor C++">
+                    <div class="project-preview-overlay"></div>
                 </div>
-            </div>
-            <div class="project-card reveal">
-                <div class="project-preview">📊</div>
                 <div class="project-body">
+                    <div class="project-badge">Školní</div>
                     <div class="project-title">Síťový Analyzátor</div>
                     <div class="project-desc">Nástroj pro analýzu síťového provozu a monitorování připojení v C++.</div>
                     <div class="project-footer">
                         <div class="project-tech"><span class="skill-tag">C++</span><span class="skill-tag">Qt</span></div>
-                        <a href="https://github.com/Kulisekmatej/Network-Traffic-Analyzer" class="project-link">Zdrojový kód →</a>
+                        <a href="https://github.com/Kulisekmatej/Network-Traffic-Analyzer" class="project-link" target="_blank">Zdrojový kód →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card reveal">
+                <div class="project-preview">
+                    <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=700&auto=format&fit=crop&q=70" alt="Roblox Tycoon Game">
+                    <div class="project-preview-overlay"></div>
+                </div>
+                <div class="project-body">
+                    <div class="project-badge">Ve vývoji</div>
+                    <div class="project-title">Roblox Tycoon Game</div>
+                    <div class="project-desc">Tycoon hra vytvořená v Roblox Studiu s vlastními herními mechanikami a ekonomikou. Stále ve vývoji.</div>
+                    <div class="project-footer">
+                        <div class="project-tech"><span class="skill-tag">Lua</span><span class="skill-tag">Roblox</span></div>
+                        <a href="#" class="project-link">Brzy →</a>
                     </div>
                 </div>
             </div>
@@ -431,34 +457,53 @@
             <div class="section-label">// 05 — Kontakt</div>
             <h2 class="section-title">Spojme se</h2>
         </div>
-        <div class="contact-grid reveal">
-            <a href="mailto:matej.kulisek99@icloud.com" class="contact-card">
-                <div class="contact-icon">✉️</div>
-                <div class="contact-info">
-                    <div class="contact-label">Email</div>
-                    <div class="contact-value">matej.kulisek99@icloud.com</div>
+        <!-- FIX 4: Formulář přidán, Discord odstraněn -->
+        <div class="contact-wrapper reveal">
+            <div class="contact-links-col">
+                <a href="mailto:matej.kulisek99@icloud.com" class="contact-card">
+                    <div class="contact-icon">✉️</div>
+                    <div class="contact-info">
+                        <div class="contact-label">Email</div>
+                        <div class="contact-value">matej.kulisek99@icloud.com</div>
+                    </div>
+                </a>
+                <a href="https://github.com/Kulisekmatej" target="_blank" class="contact-card">
+                    <div class="contact-icon">🐙</div>
+                    <div class="contact-info">
+                        <div class="contact-label">GitHub</div>
+                        <div class="contact-value">github.com/Kulisekmatej</div>
+                    </div>
+                </a>
+            </div>
+            <!-- Formspree — nahraď XXXXXXXX svým form ID z formspree.io -->
+            <form class="contact-form" action="https://formspree.io/f/XXXXXXXX" method="POST">
+                <h3>Napište mi zprávu</h3>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Jméno</label>
+                        <input type="text" name="name" placeholder="Jan Novák" required>
+                    </div>
+                    <div class="form-group">
+                        <label>E-mail</label>
+                        <input type="email" name="email" placeholder="jan@email.cz" required>
+                    </div>
                 </div>
-            </a>
-            <a href="https://github.com/Kulisekmatej" target="_blank" class="contact-card">
-                <div class="contact-icon">🐙</div>
-                <div class="contact-info">
-                    <div class="contact-label">GitHub</div>
-                    <div class="contact-value">github.com/Kulisekmatej</div>
+                <div class="form-group">
+                    <label>Předmět</label>
+                    <input type="text" name="subject" placeholder="Tvorba webu / Správa sítí / ...">
                 </div>
-            </a>
-            <a href="https://discord.com" target="_blank" class="contact-card">
-                <div class="contact-icon">💬</div>
-                <div class="contact-info">
-                    <div class="contact-label">Discord</div>
-                    <div class="contact-value">moewskeeter</div>
+                <div class="form-group">
+                    <label>Zpráva</label>
+                    <textarea name="message" placeholder="Popište váš projekt nebo dotaz..." required></textarea>
                 </div>
-            </a>
+                <button type="submit" class="btn-submit">Odeslat zprávu →</button>
+            </form>
         </div>
     </div>
 </section>
 
 <footer>
-    <div class="container">&lt;/&gt;· © 2026 Matěj Kulíšek</div>
+    <div class="container">&lt;/&gt; · © 2026 Matěj Kulíšek · matej.kulisek99@icloud.com</div>
 </footer>
 
 <script>
