@@ -8,6 +8,7 @@
     <meta name="keywords" content="Matěj Kulíšek, webové stránky, tvorba webů, správa sociálních sítí, IT student, developer, kybernetická bezpečnost, C++, Python, networking">
     <meta name="author" content="Matěj Kulíšek">
     <meta name="robots" content="index, follow">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
     <link rel="canonical" href="https://kulisekmatej.github.io/">
     <meta property="og:title" content="Matěj Kulíšek — Developer & IT Student">
     <meta property="og:description" content="IT student zaměřený na vývoj aplikací, sítě a kybernetickou bezpečnost. Nabízím tvorbu webů a správu sociálních sítí.">
@@ -522,11 +523,11 @@
         <!-- FIX 4: Formulář přidán, Discord odstraněn -->
         <div class="contact-wrapper reveal">
             <div class="contact-links-col">
-                <a href="/cdn-cgi/l/email-protection#0f626e7b6a6521647a63667c6a6436364f666c63607a6b216c6062" class="contact-card">
+                <a id="email-link" href="#" class="contact-card">
                     <div class="contact-icon">✉️</div>
                     <div class="contact-info">
                         <div class="contact-label">Email</div>
-                        <div class="contact-value"><span class="__cf_email__" data-cfemail="e78a8693828dc98c928b8e94828cdedea78e848b889283c984888a">[email&#160;protected]</span></div>
+                        <div class="contact-value" id="email-display"></div>
                     </div>
                 </a>
                 <a href="https://github.com/Kulisekmatej" target="_blank" class="contact-card">
@@ -565,7 +566,7 @@
 </section>
 
 <footer>
-    <div class="container">&lt;/&gt; · © 2026 Matěj Kulíšek · IČO: XXXXXXXX · matej.kulisek99@icloud.com</div>
+    <div class="container">&lt;/&gt; · © 2026 Matěj Kulíšek · IČO: XXXXXXXX · <span id="footer-email"></span></div>
 </footer>
 
 <script>
@@ -586,6 +587,19 @@
         var y = (e.clientY / window.innerHeight - 0.5) * 40;
         orb.style.transform = "translate(" + x + "px, " + y + "px)";
     });
+
+    // Email obfuscation — sestaví email za běhu, Cloudflare ho nezakóduje
+    (function() {
+        var u = 'matej.kulisek99';
+        var d = 'icloud.com';
+        var e = u + '@' + d;
+        var link = document.getElementById('email-link');
+        var display = document.getElementById('email-display');
+        var footer = document.getElementById('footer-email');
+        if (link) link.href = 'mailto:' + e;
+        if (display) display.textContent = e;
+        if (footer) footer.textContent = e;
+    })();
 </script>
 
 </body>
