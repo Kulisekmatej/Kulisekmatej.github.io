@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Služby — Matěj Kulíšek</title>
+  <meta name="description" content="Tvorba webů, správa sociálních sítí a kompletní online prezence pro živnostníky a malé firmy v ČR.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── PAGE HERO ── */
+    .page-hero { padding: 4rem 0; background: var(--bg); border-bottom: 1px solid var(--border); text-align: center; }
+    .ph-title { font-family: var(--fn-d); font-size: clamp(2.2rem,5vw,3.2rem); font-weight: 800; letter-spacing: -0.05em; line-height: 1.1; margin: 0.75rem 0 1rem; }
+    .ph-desc { color: var(--ink-2); font-size: 1rem; max-width: 500px; margin: 0 auto; line-height: 1.75; }
+
+    /* ── SERVICE CARDS ── */
+    .svc-full {
+      background: var(--white); border: 1px solid var(--border); border-radius: var(--r);
+      padding: 2.2rem; display: flex; flex-direction: column; gap: 0;
+      transition: all 0.25s; position: relative; overflow: hidden;
+    }
+    .svc-full:hover { box-shadow: var(--shadow); transform: translateY(-4px); }
+    .svc-full.featured {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px var(--accent), var(--shadow);
+    }
+    .svc-badge-row { display: flex; gap: 0.5rem; margin-bottom: 1.2rem; align-items: center; justify-content: space-between; }
+    .svc-icon-lg { font-size: 2.2rem; margin-bottom: 0.85rem; }
+    .svc-name-lg { font-family: var(--fn-d); font-size: 1.3rem; font-weight: 700; letter-spacing: -0.03em; margin-bottom: 0.6rem; }
+    .svc-desc-lg { font-size: 0.875rem; color: var(--ink-2); line-height: 1.7; margin-bottom: 1.5rem; }
+    .svc-features { list-style: none; margin-bottom: 1.75rem; display: flex; flex-direction: column; gap: 0.55rem; }
+    .svc-features li { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.84rem; color: var(--ink-2); line-height: 1.5; }
+    .svc-features .ico { color: var(--green); font-size: 0.85rem; margin-top: 0.1rem; flex-shrink: 0; }
+    .svc-divider { border: none; border-top: 1px solid var(--border); margin: 1.5rem 0; }
+    .svc-footer { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; }
+    .price-label { font-size: 0.72rem; font-weight: 600; color: var(--ink-3); text-transform: uppercase; letter-spacing: 0.08em; }
+    .price-val { font-family: var(--fn-d); font-size: 1rem; font-weight: 700; color: var(--ink); }
+
+    /* ── PROCESS SECTION ── */
+    .process-section { background: var(--bg); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .process-steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; position: relative; }
+    .process-steps::before {
+      content: ''; position: absolute; top: 22px; left: 5%; right: 5%; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border) 20%, var(--border) 80%, transparent);
+    }
+    .pstep { text-align: center; position: relative; }
+    .pstep-num {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--white); border: 2px solid var(--border);
+      font-family: var(--fn-d); font-size: 0.9rem; font-weight: 700; color: var(--accent);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1rem; position: relative; z-index: 1;
+      transition: all 0.2s;
+    }
+    .pstep:hover .pstep-num { border-color: var(--accent); background: var(--accent-bg); }
+    .pstep-title { font-family: var(--fn-d); font-weight: 700; font-size: 0.9rem; margin-bottom: 0.4rem; }
+    .pstep-desc { font-size: 0.8rem; color: var(--ink-2); line-height: 1.6; }
+
+    /* ── FAQ ── */
+    .faq-list { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q {
+      width: 100%; text-align: left; background: none; border: none; cursor: pointer;
+      padding: 1.25rem 1.5rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+      font-family: var(--fn-b); font-size: 0.9rem; font-weight: 600; color: var(--ink);
+      transition: background 0.2s;
+    }
+    .faq-q:hover { background: var(--bg); }
+    .faq-arrow { font-size: 0.8rem; color: var(--ink-3); transition: transform 0.25s; flex-shrink: 0; }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+    .faq-a { display: none; padding: 0 1.5rem 1.25rem; font-size: 0.875rem; color: var(--ink-2); line-height: 1.75; }
+    .faq-item.open .faq-a { display: block; }
+
+    /* ── NOTE ── */
+    .services-note {
+      border-left: 3px solid var(--accent); background: var(--accent-bg);
+      border-radius: 0 var(--r-sm) var(--r-sm) 0; padding: 1.2rem 1.5rem;
+      font-size: 0.875rem; color: var(--ink-2); line-height: 1.7; margin-top: 2rem;
+    }
+    .services-note strong { color: var(--ink); }
+
+    @media(max-width:900px) {
+      .process-steps { grid-template-columns: repeat(2,1fr); }
+      .process-steps::before { display: none; }
+    }
+    @media(max-width:600px) {
+      .process-steps { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><span class="nav-logo-dot"></span>Matěj Kulíšek</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Domů</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="services.html" class="active">Služby</a></li>
+        <li><a href="contact.html" class="nav-cta">Konzultace zdarma</a></li>
+      </ul>
+      <button class="nav-mobile" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <span class="badge badge-blue">Služby</span>
+    <h1 class="ph-title">Co pro vás mohu udělat?</h1>
+    <p class="ph-desc">Přehledné balíčky pro živnostníky a malé firmy. Konzultace je vždy zdarma a nezávazná.</p>
+  </div>
+</section>
+
+<!-- SERVICE CARDS -->
+<section>
+  <div class="container">
+    <div class="g3">
+      <!-- WEB -->
+      <div class="svc-full reveal" id="web">
+        <div class="svc-badge-row"><span class="badge badge-blue">Tvorba webu</span></div>
+        <div class="svc-icon-lg">🌐</div>
+        <div class="svc-name-lg">Webové stránky</div>
+        <div class="svc-desc-lg">Moderní, rychlý a responzivní web na míru. Čistý kód bez zbytečných pluginů, který funguje na všech zařízeních.</div>
+        <ul class="svc-features">
+          <li><span class="ico">✓</span> Responzivní design (mobil, tablet, PC)</li>
+          <li><span class="ico">✓</span> Moderní a čistý vzhled na míru</li>
+          <li><span class="ico">✓</span> SEO základ (meta tagy, sitemap)</li>
+          <li><span class="ico">✓</span> Kontaktní formulář (Formspree)</li>
+          <li><span class="ico">✓</span> Google Analytics integrace</li>
+          <li><span class="ico">✓</span> Google Maps napojení</li>
+          <li><span class="ico">✓</span> Nasazení a spuštění v ceně</li>
+        </ul>
+        <hr class="svc-divider">
+        <div class="svc-footer">
+          <div><div class="price-label">Cena od</div><div class="price-val">Dle rozsahu projektu</div></div>
+          <a href="contact.html" class="btn btn-primary">Poptávka →</a>
+        </div>
+      </div>
+
+      <!-- SOCIAL -->
+      <div class="svc-full reveal" id="social">
+        <div class="svc-badge-row"><span class="badge badge-blue">Správa sítí</span></div>
+        <div class="svc-icon-lg">📱</div>
+        <div class="svc-name-lg">Sociální sítě</div>
+        <div class="svc-desc-lg">Pravidelný a vizuálně konzistentní obsah pro Instagram, Facebook nebo TikTok. Budujte komunitu a dostávejte zákazníky online.</div>
+        <ul class="svc-features">
+          <li><span class="ico">✓</span> Plánování a tvorba obsahu</li>
+          <li><span class="ico">✓</span> Instagram / Facebook / TikTok</li>
+          <li><span class="ico">✓</span> Jednotný vizuální styl (brand)</li>
+          <li><span class="ico">✓</span> Pravidelný reporting & statistiky</li>
+          <li><span class="ico">✓</span> Doporučení pro organický růst</li>
+          <li><span class="ico">✓</span> Hashtagová strategie</li>
+          <li><span class="ico">✓</span> Komunikace s followers</li>
+        </ul>
+        <hr class="svc-divider">
+        <div class="svc-footer">
+          <div><div class="price-label">Cena od</div><div class="price-val">Měsíční spolupráce</div></div>
+          <a href="contact.html" class="btn btn-primary">Poptávka →</a>
+        </div>
+      </div>
+
+      <!-- BUNDLE -->
+      <div class="svc-full featured reveal" id="bundle">
+        <div class="svc-badge-row"><span class="badge badge-green">✓ Nejoblíbenější</span><span class="badge badge-blue">Balíček</span></div>
+        <div class="svc-icon-lg">🚀</div>
+        <div class="svc-name-lg">Vše v jednom balíčku</div>
+        <div class="svc-desc-lg">Kompletní digitální start pro nové podnikání nebo firmy, které chtějí být vidět. Web + sociální sítě + Google Business — vše najednou.</div>
+        <ul class="svc-features">
+          <li><span class="ico">✓</span> Webová stránka na míru</li>
+          <li><span class="ico">✓</span> Nastavení & správa sociálních sítí</li>
+          <li><span class="ico">✓</span> Google Business profil (správa)</li>
+          <li><span class="ico">✓</span> Propojení všech kanálů</li>
+          <li><span class="ico">✓</span> Úvodní konzultace zdarma</li>
+          <li><span class="ico">✓</span> Jednotný vizuální brand</li>
+          <li><span class="ico">✓</span> Podpora po spuštění</li>
+        </ul>
+        <hr class="svc-divider">
+        <div class="svc-footer">
+          <div><div class="price-label">Cena od</div><div class="price-val">Individuální nabídka</div></div>
+          <a href="contact.html" class="btn btn-primary">Poptávka →</a>
+        </div>
+      </div>
+    </div>
+    <div class="services-note reveal">
+      <strong>💡 Jak funguje cena?</strong> Každý projekt je jiný — cena závisí na rozsahu a náročnosti. Napište mi přes kontaktní formulář nebo e-mail, probereme vaše požadavky a připravím nezávaznou nabídku. Konzultace je vždy zdarma.
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-section">
+  <div class="container">
+    <div class="section-hd c reveal">
+      <div class="section-eyebrow">Postup spolupráce</div>
+      <h2 class="section-title">Jak to funguje?</h2>
+      <p class="section-desc">Jednoduchý a transparentní proces od prvního kontaktu po spuštění.</p>
+    </div>
+    <div class="process-steps">
+      <div class="pstep reveal">
+        <div class="pstep-num">1</div>
+        <div class="pstep-title">Konzultace</div>
+        <div class="pstep-desc">Napíšete mi s popisem projektu. Probereme požadavky, timeline a cíle — bez závazků a zdarma.</div>
+      </div>
+      <div class="pstep reveal">
+        <div class="pstep-num">2</div>
+        <div class="pstep-title">Nabídka</div>
+        <div class="pstep-desc">Připravím konkrétní nabídku s rozsahem prací, cenou a termínem dodání. Vše písemně, jasně.</div>
+      </div>
+      <div class="pstep reveal">
+        <div class="pstep-num">3</div>
+        <div class="pstep-title">Realizace</div>
+        <div class="pstep-desc">Pracuji na projektu a průběžně vás informuji. Dostáváte náhledy a zapracovávám vaše připomínky.</div>
+      </div>
+      <div class="pstep reveal">
+        <div class="pstep-num">4</div>
+        <div class="pstep-title">Předání & podpora</div>
+        <div class="pstep-desc">Web nasadím, vše nastavím a předám. Jsem k dispozici i po dokončení projektu pro dotazy.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="container" style="max-width:720px;">
+    <div class="section-hd c reveal">
+      <div class="section-eyebrow">Časté dotazy</div>
+      <h2 class="section-title">Máte otázky?</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-q">Jak dlouho trvá tvorba webu? <span class="faq-arrow">▾</span></button>
+        <div class="faq-a">Záleží na rozsahu. Jednoduchý jednostránkový web (jako vizitka nebo landing page) bývá hotový za 1–2 týdny. Složitější weby s více sekcemi nebo speciálními funkcemi mohou trvat 3–4 týdny. Přesný termín stanovím v nabídce.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Na jaké platformě bude web postavený? <span class="faq-arrow">▾</span></button>
+        <div class="faq-a">Stavím weby v čistém HTML/CSS/JS bez nutnosti drahých CMS systémů nebo měsíčních poplatků za hosting. Pro jednoduché stránky je to ideální řešení — rychlé, levné a bezpečné. Pokud potřebujete redakční systém (WordPress apod.), domluvíme se.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Musím platit za hosting? <span class="faq-arrow">▾</span></button>
+        <div class="faq-a">Pro statické weby mohu použít GitHub Pages nebo Cloudflare Pages, které jsou zdarma. Doménu (.cz nebo .com) si pořídíte za cca 200–500 Kč/rok. Varianta s placeným hostingem je samozřejmě taky možná, pokud v budoucnu potřebujete více funkcí (PHP, databáze, e-mail hosting)."</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Mohu si web sám upravovat? <span class="faq-arrow">▾</span></button>
+        <div class="faq-a">Ano. Kód předám přehledně komentovaný. Pokud chcete jednoduché úpravy (texty, fotky), naučím vás, jak na to. Pro náročnější změny se vždy ozvěte — rád pomůžu.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Spolupracujete i se živnostníky bez s.r.o.? <span class="faq-arrow">▾</span></button>
+        <div class="faq-a">Samozřejmě! Sám jsem OSVČ a rozumím potřebám živnostníků. Vystavím fakturu, vše proběhne korektně. Pracuji s fyzickými osobami i firmami.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Jak probíhá platba? <span class="faq-arrow">▾</span></button>
+        <div class="faq-a">Standardně záloha 50 % před zahájením, doplatek 50 % při předání. U menších projektů lze domluvit platbu celé částky po dokončení. Platba bankovním převodem, vystavenou fakturou.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="background:var(--bg);border-top:1px solid var(--border);padding:4rem 0;">
+  <div class="container" style="text-align:center;">
+    <div class="reveal">
+      <h2 class="section-title" style="margin-bottom:0.75rem;">Připraveni začít?</h2>
+      <p style="color:var(--ink-2);margin-bottom:1.75rem;max-width:450px;margin-left:auto;margin-right:auto;">Napište mi a do 24 hodin se ozvu zpátky s odpovědí a dalším krokem.</p>
+      <a href="contact.html" class="btn btn-primary btn-lg">Napsat zprávu →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="f-logo">Matěj Kulíšek</div><p>IT student & freelance developer.</p></div>
+      <div class="footer-col"><h4>Navigace</h4><ul><li><a href="index.html">Domů</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="services.html">Služby</a></li><li><a href="contact.html">Kontakt</a></li></ul></div>
+      <div class="footer-col"><h4>Kontakt</h4><ul><li><a href="mailto:matej.kulisek99@icloud.com">matej.kulisek99@icloud.com</a></li><li><a href="https://github.com/Kulisekmatej" target="_blank">github.com/Kulisekmatej</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Matěj Kulíšek · IČO: 24617334</span><span>IT Student & Freelance Developer · ČR</span></div>
+  </div>
+</footer>
+
+<script>
+  // Reveal
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach((e,i) => { if(e.isIntersecting) { setTimeout(()=>e.target.classList.add('v'), i*90); obs.unobserve(e.target); }});
+  }, {threshold:0.08});
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+
+  // Mobile nav
+  const toggle = document.getElementById('navToggle');
+  const navLinks = document.querySelector('.nav-links');
+  if(toggle && navLinks) toggle.addEventListener('click', () => { const open = navLinks.style.display==='flex'; navLinks.style.cssText = open ? '' : 'display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:1rem 1.5rem;gap:0.25rem;'; });
+</script>
+</body>
+</html>
