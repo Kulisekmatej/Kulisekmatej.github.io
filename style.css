@@ -164,6 +164,21 @@ section { padding:5.5rem 0; }
   .footer-bottom { flex-direction:column; gap:0.5rem; text-align:center; }
 }
 
+/* === LANGUAGE TOGGLE === */
+.lang-toggle {
+  display: flex; align-items: center; gap: 2px;
+  background: var(--bg-alt); border-radius: var(--r-pill);
+  padding: 3px; border: 1px solid var(--border);
+}
+.lang-btn {
+  background: none; border: none; cursor: pointer;
+  font-family: var(--fn-b); font-size: 0.72rem; font-weight: 700;
+  color: var(--ink-3); padding: 0.25rem 0.6rem; border-radius: var(--r-pill);
+  transition: all 0.2s; letter-spacing: 0.05em;
+}
+.lang-btn:hover { color: var(--ink); }
+.lang-btn--active { background: var(--white); color: var(--accent); box-shadow: var(--shadow-sm); }
+
 /* === SCROLLBAR === */
 ::-webkit-scrollbar { width:5px; }
 ::-webkit-scrollbar-track { background:var(--bg); }

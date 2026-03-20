@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kontakt — Matěj Kulíšek</title>
+  <title data-cs="Kontakt — Matěj Kulíšek" data-en="Contact — Matěj Kulíšek">Kontakt — Matěj Kulíšek</title>
   <meta name="description" content="Kontaktujte Matěje Kulíška — freelance web developer a IT student. Konzultace zdarma, odpovím do 24 hodin.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -97,11 +97,13 @@
     <div class="nav-inner">
       <a href="index.html" class="nav-logo"><span class="nav-logo-dot"></span>Matěj Kulíšek</a>
       <ul class="nav-links">
-        <li><a href="index.html">Domů</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="services.html">Služby</a></li>
-        <li><a href="contact.html" class="nav-cta active" style="background:var(--accent-bg);color:var(--accent);">Konzultace zdarma</a></li>
+        <li><a href="index.html" data-cs="Domů" data-en="Home">Domů</a></li>
+        <li><a href="portfolio.html" data-cs="Portfolio" data-en="Portfolio">Portfolio</a></li>
+        <li><a href="services.html" data-cs="Služby" data-en="Services">Služby</a></li>
+        <li><a href="contact.html" class="nav-cta active" style="background:var(--accent-bg);color:var(--accent);"
+          data-cs="Konzultace zdarma" data-en="Free consultation">Konzultace zdarma</a></li>
       </ul>
+      <div class="lang-toggle" style="margin-right:0.5rem;"></div>
       <button class="nav-mobile" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -110,9 +112,18 @@
 <!-- PAGE HERO -->
 <section class="page-hero">
   <div class="container">
-    <div class="ph-eyebrow"><span class="badge badge-green badge-dot">Odpovím do 24 hodin</span></div>
-    <h1 class="ph-title">Pojďme na váš<br><span class="gtext">projekt.</span></h1>
-    <p class="ph-desc">Konzultace je vždy zdarma a nezávazná. Napište mi o svém projektu a já se vám ozvu co nejdříve.</p>
+    <div class="ph-eyebrow">
+      <span class="badge badge-green badge-dot"
+        data-cs="Odpovím do 24 hodin" data-en="I'll reply within 24 hours">Odpovím do 24 hodin</span>
+    </div>
+    <h1 class="ph-title">
+      <span data-cs="Pojďme na váš" data-en="Let's work on">Pojďme na váš</span><br>
+      <span class="gtext" data-cs="projekt." data-en="your project.">projekt.</span>
+    </h1>
+    <p class="ph-desc"
+      data-cs="Konzultace je vždy zdarma a nezávazná. Napište mi o svém projektu a já se vám ozvu co nejdříve."
+      data-en="Consultation is always free and non-binding. Tell me about your project and I'll get back to you as soon as possible.">
+      Konzultace je vždy zdarma a nezávazná. Napište mi o svém projektu a já se vám ozvu co nejdříve.</p>
   </div>
 </section>
 
@@ -141,57 +152,68 @@
           <a href="https://www.credly.com/users/matej-kulisek" target="_blank" class="c-card">
             <div class="c-icon">🏅</div>
             <div>
-              <div class="c-label">Certifikáty</div>
-              <div class="c-val">Credly — ověřit ↗</div>
+              <div class="c-label" data-cs="Certifikáty" data-en="Certificates">Certifikáty</div>
+              <div class="c-val" data-cs="Credly — ověřit ↗" data-en="Credly — verify ↗">Credly — ověřit ↗</div>
             </div>
           </a>
         </div>
         <div class="info-note reveal" style="margin-top:1.25rem;">
-          <h4>Co mi napsat?</h4>
+          <h4 data-cs="Co mi napsat?" data-en="What to include?">Co mi napsat?</h4>
           <ul>
-            <li>Stručný popis projektu</li>
-            <li>Preferovaný termín nebo deadline</li>
-            <li>Vaše kontaktní údaje</li>
-            <li>Případně odkaz na inspiraci</li>
+            <li data-cs="Stručný popis projektu" data-en="Brief project description">Stručný popis projektu</li>
+            <li data-cs="Preferovaný termín nebo deadline" data-en="Preferred timeline or deadline">Preferovaný termín nebo deadline</li>
+            <li data-cs="Vaše kontaktní údaje" data-en="Your contact details">Vaše kontaktní údaje</li>
+            <li data-cs="Případně odkaz na inspiraci" data-en="Optionally a link to inspiration">Případně odkaz na inspiraci</li>
           </ul>
         </div>
       </div>
 
       <!-- RIGHT: Form -->
       <div class="contact-form reveal">
-        <div class="cf-title">Napište mi zprávu 👋</div>
+        <div class="cf-title" data-cs="Napište mi zprávu 👋" data-en="Send me a message 👋">Napište mi zprávu 👋</div>
         <div id="form-success" class="form-success">
           <div class="icon">✅</div>
-          <h3>Zpráva odeslána!</h3>
-          <p>Ozvu se vám nejpozději do 24 hodin. Díky!</p>
+          <h3 data-cs="Zpráva odeslána!" data-en="Message sent!">Zpráva odeslána!</h3>
+          <p data-cs="Ozvu se vám nejpozději do 24 hodin. Díky!" data-en="I'll get back to you within 24 hours. Thanks!">Ozvu se vám nejpozději do 24 hodin. Díky!</p>
         </div>
         <form id="contact-form" action="https://formspree.io/f/XXXXXXXX" method="POST">
           <div class="form-row">
             <div class="form-group">
-              <label>Jméno *</label>
-              <input type="text" name="name" placeholder="Jan Novák" required>
+              <label data-cs="Jméno *" data-en="Name *">Jméno *</label>
+              <input type="text" name="name"
+                data-placeholder-cs="Jan Novák" data-placeholder-en="John Smith"
+                placeholder="Jan Novák" required>
             </div>
             <div class="form-group">
-              <label>E-mail *</label>
-              <input type="email" name="email" placeholder="jan@email.cz" required>
+              <label data-cs="E-mail *" data-en="E-mail *">E-mail *</label>
+              <input type="email" name="email"
+                data-placeholder-cs="jan@email.cz" data-placeholder-en="john@email.com"
+                placeholder="jan@email.cz" required>
             </div>
           </div>
           <div class="form-group">
-            <label>Zájem o službu</label>
-            <select name="service">
-              <option value="">— Vyberte službu —</option>
-              <option value="web">Tvorba webových stránek</option>
-              <option value="social">Správa sociálních sítí</option>
-              <option value="bundle">Online prezence na klíč</option>
-              <option value="other">Jiné / Nezávazná konzultace</option>
+            <label data-cs="Zájem o službu" data-en="Service of interest">Zájem o službu</label>
+            <select name="service" id="service-select">
+              <option value="" data-cs="— Vyberte službu —" data-en="— Select a service —">— Vyberte službu —</option>
+              <option value="web" data-cs="Tvorba webových stránek" data-en="Website development">Tvorba webových stránek</option>
+              <option value="social" data-cs="Správa sociálních sítí" data-en="Social media management">Správa sociálních sítí</option>
+              <option value="bundle" data-cs="Online prezence na klíč" data-en="Full digital package">Online prezence na klíč</option>
+              <option value="other" data-cs="Jiné / Nezávazná konzultace" data-en="Other / Free consultation">Jiné / Nezávazná konzultace</option>
             </select>
           </div>
           <div class="form-group">
-            <label>Zpráva *</label>
-            <textarea name="message" placeholder="Popište váš projekt — čím více info, tím lépe mohu připravit nabídku..." required></textarea>
+            <label data-cs="Zpráva *" data-en="Message *">Zpráva *</label>
+            <textarea name="message"
+              data-placeholder-cs="Popište váš projekt — čím více info, tím lépe mohu připravit nabídku..."
+              data-placeholder-en="Describe your project — the more info, the better I can prepare a quote..."
+              placeholder="Popište váš projekt — čím více info, tím lépe mohu připravit nabídku..." required></textarea>
           </div>
-          <button type="submit" class="btn-submit" id="submitBtn">Odeslat zprávu →</button>
-          <p class="form-footer">Odesláním souhlasíte se zpracováním kontaktních údajů za účelem odpovědí na váš dotaz.</p>
+          <button type="submit" class="btn-submit" id="submitBtn"
+            data-cs="Odeslat zprávu →" data-en="Send message →">Odeslat zprávu →</button>
+          <p class="form-footer"
+            data-cs="Odesláním souhlasíte se zpracováním kontaktních údajů za účelem odpovědí na váš dotaz."
+            data-en="By submitting you agree to the processing of your contact details for the purpose of responding to your inquiry.">
+            Odesláním souhlasíte se zpracováním kontaktních údajů za účelem odpovědí na váš dotaz.</p>
         </form>
       </div>
     </div>
@@ -201,13 +223,82 @@
 <footer class="site-footer" style="margin-top:2rem;">
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-brand"><div class="f-logo">Matěj Kulíšek</div><p>IT student & freelance developer.</p></div>
-      <div class="footer-col"><h4>Navigace</h4><ul><li><a href="index.html">Domů</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="services.html">Služby</a></li><li><a href="contact.html">Kontakt</a></li></ul></div>
-      <div class="footer-col"><h4>Kontakt</h4><ul><li><a href="mailto:matej.kulisek99@icloud.com">matej.kulisek99@icloud.com</a></li><li><a href="https://github.com/Kulisekmatej" target="_blank">github.com/Kulisekmatej</a></li></ul></div>
+      <div class="footer-brand">
+        <div class="f-logo">Matěj Kulíšek</div>
+        <p data-cs="IT student & freelance developer." data-en="IT student & freelance developer.">IT student & freelance developer.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-cs="Navigace" data-en="Navigation">Navigace</h4>
+        <ul>
+          <li><a href="index.html" data-cs="Domů" data-en="Home">Domů</a></li>
+          <li><a href="portfolio.html" data-cs="Portfolio" data-en="Portfolio">Portfolio</a></li>
+          <li><a href="services.html" data-cs="Služby" data-en="Services">Služby</a></li>
+          <li><a href="contact.html" data-cs="Kontakt" data-en="Contact">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-cs="Kontakt" data-en="Contact">Kontakt</h4>
+        <ul>
+          <li><a href="mailto:matej.kulisek99@icloud.com">matej.kulisek99@icloud.com</a></li>
+          <li><a href="https://github.com/Kulisekmatej" target="_blank">github.com/Kulisekmatej</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="footer-bottom"><span>© 2026 Matěj Kulíšek · IČO: XXXXXXXX</span><span>IT Student & Freelance Developer · ČR</span></div>
+    <div class="footer-bottom">
+      <span>© 2026 Matěj Kulíšek · IČO: XXXXXXXX</span>
+      <span data-cs="IT Student & Freelance Developer · ČR" data-en="IT Student & Freelance Developer · Czech Republic">IT Student & Freelance Developer · ČR</span>
+    </div>
   </div>
 </footer>
+
+<script>
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach((e,i) => { if(e.isIntersecting) { setTimeout(()=>e.target.classList.add('v'), i*90); obs.unobserve(e.target); }});
+  }, {threshold:0.08});
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  (function() {
+    const e = 'matej.kulisek99' + '@' + 'icloud.com';
+    const link = document.getElementById('email-link');
+    if (link) link.href = 'mailto:' + e;
+  })();
+
+  const form = document.getElementById('contact-form');
+  const successBox = document.getElementById('form-success');
+  const submitBtn = document.getElementById('submitBtn');
+  if (form) {
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const lang = window.__siteLang || 'cs';
+      submitBtn.textContent = lang === 'en' ? 'Sending…' : 'Odesílám…';
+      submitBtn.disabled = true;
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(form)
+        });
+        if (res.ok) {
+          form.style.display = 'none';
+          successBox.style.display = 'block';
+        } else {
+          submitBtn.textContent = lang === 'en' ? 'Error — try again' : 'Chyba — zkuste znovu';
+          submitBtn.disabled = false;
+        }
+      } catch {
+        submitBtn.textContent = (window.__siteLang === 'en') ? 'Error — try again' : 'Chyba — zkuste znovu';
+        submitBtn.disabled = false;
+      }
+    });
+  }
+
+  const toggle = document.getElementById('navToggle');
+  const navLinks = document.querySelector('.nav-links');
+  if(toggle && navLinks) toggle.addEventListener('click', () => { const open = navLinks.style.display==='flex'; navLinks.style.cssText = open ? '' : 'display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:1rem 1.5rem;gap:0.25rem;'; });
+</script>
+<script src="lang.js"></script>
+</body>
+</html>
 
 <script>
   // Reveal

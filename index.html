@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Matěj Kulíšek — Tvorba webů & Online prezence</title>
+  <title data-cs="Matěj Kulíšek — Tvorba webů & Online prezence" data-en="Matěj Kulíšek — Web Development & Online Presence">Matěj Kulíšek — Tvorba webů & Online prezence</title>
   <meta name="description" content="Pomáhám živnostníkům a malým firmám vybudovat profesionální online prezenci. Tvorba webů, správa sociálních sítí, Google Business profil.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://kulisekmatej.github.io/">
@@ -150,11 +150,13 @@
         <span class="nav-logo-dot"></span>Matěj Kulíšek
       </a>
       <ul class="nav-links">
-        <li><a href="index.html" class="active">Domů</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="services.html">Služby</a></li>
-        <li><a href="contact.html" class="nav-cta">Konzultace zdarma</a></li>
+        <li><a href="index.html" class="active" data-cs="Domů" data-en="Home">Domů</a></li>
+        <li><a href="portfolio.html" data-cs="Portfolio" data-en="Portfolio">Portfolio</a></li>
+        <li><a href="services.html" data-cs="Služby" data-en="Services">Služby</a></li>
+        <li><a href="contact.html" class="nav-cta" data-cs="Konzultace zdarma" data-en="Free consultation">Konzultace zdarma</a></li>
       </ul>
+      <!-- Language toggle -->
+      <div class="lang-toggle" style="margin-right:0.5rem;"></div>
       <button class="nav-mobile" id="navToggle" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -166,28 +168,42 @@
 <section class="hero">
   <div class="container">
     <div class="hero-badge">
-      <span class="badge badge-green badge-dot">Dostupný pro nové projekty</span>
+      <span class="badge badge-green badge-dot"
+        data-cs="Dostupný pro nové projekty"
+        data-en="Available for new projects">Dostupný pro nové projekty</span>
     </div>
     <h1 class="hero-title">
-      Váš web, který<br>
-      <span class="gtext"> začne prodávát.</span>
+      <span data-cs="Váš web, který" data-en="Your website that">Váš web, který</span><br>
+      <span class="gtext"
+        data-cs="skutečně prodává."
+        data-en="actually sells.">skutečně prodává.</span>
     </h1>
-    <p class="hero-sub">
+    <p class="hero-sub"
+      data-cs="Pomáhám živnostníkům a malým firmám v ČR získat profesionální online prezenci — od webu přes sociální sítě až po Google Business profil."
+      data-en="I help freelancers and small businesses get a professional online presence — from websites to social media and Google Business profiles.">
       Pomáhám živnostníkům a malým firmám v ČR získat profesionální online prezenci — 
       od webu přes sociální sítě až po Google Business profil.
     </p>
     <div class="hero-actions">
-      <a href="contact.html" class="btn btn-primary btn-lg">Začít projekt →</a>
-      <a href="portfolio.html" class="btn btn-secondary btn-lg">Zobrazit mé práce</a>
+      <a href="contact.html" class="btn btn-primary btn-lg"
+        data-cs="Začít projekt →" data-en="Start a project →">Začít projekt →</a>
+      <a href="portfolio.html" class="btn btn-secondary btn-lg"
+        data-cs="Zobrazit mé práce" data-en="View my work">Zobrazit mé práce</a>
     </div>
     <div class="hero-trust">
       <span class="trust-item"><span class="trust-check">✓</span> CCNA Certified</span>
       <span class="trust-dot"></span>
       <span class="trust-item"><span class="trust-check">✓</span> CompTIA Security+</span>
       <span class="trust-dot"></span>
-      <span class="trust-item"><span class="trust-check">✓</span> 5+ dokončených projektů</span>
+      <span class="trust-item">
+        <span class="trust-check">✓</span>
+        <span data-cs="5+ dokončených projektů" data-en="5+ completed projects">5+ dokončených projektů</span>
+      </span>
       <span class="trust-dot"></span>
-      <span class="trust-item"><span class="trust-check">✓</span> Konzultace zdarma</span>
+      <span class="trust-item">
+        <span class="trust-check">✓</span>
+        <span data-cs="Konzultace zdarma" data-en="Free consultation">Konzultace zdarma</span>
+      </span>
     </div>
   </div>
 </section>
@@ -196,28 +212,49 @@
 <section class="services-strip">
   <div class="container">
     <div class="section-hd c reveal">
-      <div class="section-eyebrow">Co nabízím</div>
-      <h2 class="section-title">Vaše online přítomnost,<br>vyřešená na klíč.</h2>
-      <p class="section-desc">Tři balíčky, které pokryjí vše, co potřebujete pro moderní digitální prezentaci.</p>
+      <div class="section-eyebrow"
+        data-cs="Co nabízím" data-en="What I offer">Co nabízím</div>
+      <h2 class="section-title"
+        data-cs="Vaše online přítomnost, vyřešená na klíč."
+        data-en="Your online presence, handled end-to-end.">
+      <p class="section-desc"
+        data-cs="Tři balíčky, které pokryjí vše, co potřebujete pro moderní digitální prezentaci."
+        data-en="Three packages covering everything you need for a modern digital presence.">
+        Tři balíčky, které pokryjí vše, co potřebujete pro moderní digitální prezentaci.</p>
     </div>
     <div class="g3">
       <div class="svc-card reveal">
         <div class="svc-icon">🌐</div>
-        <div class="svc-name">Tvorba webových stránek</div>
-        <div class="svc-desc">Moderní, responzivní web na míru. Čistý kód, rychlé načítání, SEO základ a nasazení v ceně.</div>
-        <a href="services.html#web" class="svc-link">Zjistit více →</a>
+        <div class="svc-name"
+          data-cs="Tvorba webových stránek" data-en="Website Development">Tvorba webových stránek</div>
+        <div class="svc-desc"
+          data-cs="Moderní, responzivní web na míru. Čistý kód, rychlé načítání, SEO základ a nasazení v ceně."
+          data-en="Modern, responsive custom website. Clean code, fast loading, SEO basics and deployment included.">
+          Moderní, responzivní web na míru. Čistý kód, rychlé načítání, SEO základ a nasazení v ceně.</div>
+        <a href="services.html#web" class="svc-link"
+          data-cs="Zjistit více →" data-en="Learn more →">Zjistit více →</a>
       </div>
       <div class="svc-card reveal">
         <div class="svc-icon">📱</div>
-        <div class="svc-name">Správa sociálních sítí</div>
-        <div class="svc-desc">Pravidelný obsah na Instagramu, Facebooku a TikToku. Jednotný vizuální styl a reporting každý měsíc.</div>
-        <a href="services.html#social" class="svc-link">Zjistit více →</a>
+        <div class="svc-name"
+          data-cs="Správa sociálních sítí" data-en="Social Media Management">Správa sociálních sítí</div>
+        <div class="svc-desc"
+          data-cs="Pravidelný obsah na Instagramu, Facebooku a TikToku. Jednotný vizuální styl a reporting každý měsíc."
+          data-en="Regular content on Instagram, Facebook and TikTok. Consistent visual style and monthly reporting.">
+          Pravidelný obsah na Instagramu, Facebooku a TikToku. Jednotný vizuální styl a reporting každý měsíc.</div>
+        <a href="services.html#social" class="svc-link"
+          data-cs="Zjistit více →" data-en="Learn more →">Zjistit více →</a>
       </div>
       <div class="svc-card reveal">
         <div class="svc-icon">🚀</div>
-        <div class="svc-name">Online prezence na klíč</div>
-        <div class="svc-desc">Web + sociální sítě + Google Business profil v jednom balíčku. Ideální pro nové podnikání.</div>
-        <a href="services.html#bundle" class="svc-link">Zjistit více →</a>
+        <div class="svc-name"
+          data-cs="Online prezence na klíč" data-en="Full Digital Package">Online prezence na klíč</div>
+        <div class="svc-desc"
+          data-cs="Web + sociální sítě + Google Business profil v jednom balíčku. Ideální pro nové podnikání."
+          data-en="Website + social media + Google Business profile in one package. Ideal for new businesses.">
+          Web + sociální sítě + Google Business profil v jednom balíčku. Ideální pro nové podnikání.</div>
+        <a href="services.html#bundle" class="svc-link"
+          data-cs="Zjistit více →" data-en="Learn more →">Zjistit více →</a>
       </div>
     </div>
   </div>
@@ -227,8 +264,10 @@
 <section>
   <div class="container">
     <div class="section-hd reveal">
-      <div class="section-eyebrow">Ukázka práce</div>
-      <h2 class="section-title">Poslední zakázka</h2>
+      <div class="section-eyebrow"
+        data-cs="Ukázka práce" data-en="Featured work">Ukázka práce</div>
+      <h2 class="section-title"
+        data-cs="Poslední zakázka" data-en="Latest project">Poslední zakázka</h2>
     </div>
     <div class="project-feature reveal">
       <div class="pf-visual">
@@ -239,11 +278,14 @@
       </div>
       <div>
         <div class="pf-badge-row">
-          <span class="badge badge-blue">Zakázka</span>
-          <span class="badge badge-green">✓ Dokončeno</span>
+          <span class="badge badge-blue"
+            data-cs="Zakázka" data-en="Client work">Zakázka</span>
+          <span class="badge badge-green">✓ <span data-cs="Dokončeno" data-en="Completed">Dokončeno</span></span>
         </div>
         <h3 class="pf-title">Airless Malby Kreisinger</h3>
-        <p class="pf-desc">
+        <p class="pf-desc"
+          data-cs="Profesionální jednostránkový web pro malířskou firmu pana Kreisingera. Zahrnuje responzivní design, SEO optimalizaci, kontaktní formulář přes Formspree, integraci Google Maps a Google Analytics."
+          data-en="Professional one-page website for a painting company. Includes responsive design, SEO optimisation, Formspree contact form, Google Maps and Google Analytics integration.">
           Profesionální jednostránkový web pro malířskou firmu pana Kreisingera. 
           Zahrnuje responzivní design, SEO optimalizaci, kontaktní formulář přes Formspree, 
           integraci Google Maps a Google Analytics.
@@ -255,7 +297,8 @@
           <span class="tag">Formspree</span>
           <span class="tag">Google Maps</span>
         </div>
-        <a href="portfolio.html" class="btn btn-secondary">Zobrazit všechny projekty →</a>
+        <a href="portfolio.html" class="btn btn-secondary"
+          data-cs="Zobrazit všechny projekty →" data-en="View all projects →">Zobrazit všechny projekty →</a>
       </div>
     </div>
   </div>
@@ -265,29 +308,43 @@
 <section class="process-strip">
   <div class="container">
     <div class="section-hd c reveal">
-      <div class="section-eyebrow">Jak spolupracujeme</div>
-      <h2 class="section-title">Jednoduše a transparentně</h2>
+      <div class="section-eyebrow"
+        data-cs="Jak spolupracujeme" data-en="How we work">Jak spolupracujeme</div>
+      <h2 class="section-title"
+        data-cs="Jednoduše a transparentně" data-en="Simple and transparent">Jednoduše a transparentně</h2>
     </div>
     <div class="process-grid">
       <div class="step reveal">
         <div class="step-num">01</div>
         <div>
-          <div class="step-title">Konzultace zdarma</div>
-          <div class="step-desc">Napíšete mi, co potřebujete. Probereme váš projekt, požadavky a cíle — bez závazků.</div>
+          <div class="step-title"
+            data-cs="Konzultace zdarma" data-en="Free consultation">Konzultace zdarma</div>
+          <div class="step-desc"
+            data-cs="Napíšete mi, co potřebujete. Probereme váš projekt, požadavky a cíle — bez závazků."
+            data-en="Tell me what you need. We'll discuss your project, requirements and goals — no commitment.">
+            Napíšete mi, co potřebujete. Probereme váš projekt, požadavky a cíle — bez závazků.</div>
         </div>
       </div>
       <div class="step reveal">
         <div class="step-num">02</div>
         <div>
-          <div class="step-title">Návrh & realizace</div>
-          <div class="step-desc">Připravím nabídku, timeline a začnu pracovat. Průběžně dostáváte aktualizace a náhledy.</div>
+          <div class="step-title"
+            data-cs="Návrh & realizace" data-en="Design & development">Návrh & realizace</div>
+          <div class="step-desc"
+            data-cs="Připravím nabídku, timeline a začnu pracovat. Průběžně dostáváte aktualizace a náhledy."
+            data-en="I'll prepare a quote, timeline and get to work. You'll receive updates and previews throughout.">
+            Připravím nabídku, timeline a začnu pracovat. Průběžně dostáváte aktualizace a náhledy.</div>
         </div>
       </div>
       <div class="step reveal">
         <div class="step-num">03</div>
         <div>
-          <div class="step-title">Spuštění & podpora</div>
-          <div class="step-desc">Web nasadím, vše nastavím a předám. V případě dotazů jsem k dispozici i po dokončení.</div>
+          <div class="step-title"
+            data-cs="Spuštění & podpora" data-en="Launch & support">Spuštění & podpora</div>
+          <div class="step-desc"
+            data-cs="Web nasadím, vše nastavím a předám. V případě dotazů jsem k dispozici i po dokončení."
+            data-en="I'll deploy everything, set it all up and hand it over. I'm available for questions after launch too.">
+            Web nasadím, vše nastavím a předám. V případě dotazů jsem k dispozici i po dokončení.</div>
         </div>
       </div>
     </div>
@@ -297,11 +354,18 @@
 <!-- CTA BAND -->
 <section style="padding:4rem 0;">
   <div class="cta-band reveal">
-    <h2 class="cta-title">Pojďme na váš projekt.</h2>
-    <p class="cta-sub">Konzultace je zdarma a nezávazná. Stačí napsat.</p>
+    <h2 class="cta-title"
+      data-cs="Pojďme na váš projekt." data-en="Let's work on your project.">Pojďme na váš projekt.</h2>
+    <p class="cta-sub"
+      data-cs="Konzultace je zdarma a nezávazná. Stačí napsat."
+      data-en="The consultation is free and non-binding. Just send a message.">
+      Konzultace je zdarma a nezávazná. Stačí napsat.</p>
     <div class="cta-actions">
-      <a href="contact.html" class="btn btn-primary btn-lg">Kontaktovat mě →</a>
-      <a href="services.html" class="btn btn-secondary btn-lg" style="background:rgba(255,255,255,0.08);color:#fff;border-color:rgba(255,255,255,0.15);">Přehled služeb</a>
+      <a href="contact.html" class="btn btn-primary btn-lg"
+        data-cs="Kontaktovat mě →" data-en="Contact me →">Kontaktovat mě →</a>
+      <a href="services.html" class="btn btn-secondary btn-lg"
+        style="background:rgba(255,255,255,0.08);color:#fff;border-color:rgba(255,255,255,0.15);"
+        data-cs="Přehled služeb" data-en="View services">Přehled služeb</a>
     </div>
   </div>
 </section>
@@ -311,29 +375,33 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="f-logo">Matěj Kulíšek</div>
-        <p>IT student & freelance developer. Pomáhám malým firmám a živnostníkům růst online.</p>
+        <p data-cs="IT student & freelance developer. Pomáhám malým firmám a živnostníkům růst online."
+           data-en="IT student & freelance developer. Helping small businesses grow online.">
+          IT student & freelance developer. Pomáhám malým firmám a živnostníkům růst online.</p>
       </div>
       <div class="footer-col">
-        <h4>Navigace</h4>
+        <h4 data-cs="Navigace" data-en="Navigation">Navigace</h4>
         <ul>
-          <li><a href="index.html">Domů</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="services.html">Služby</a></li>
-          <li><a href="contact.html">Kontakt</a></li>
+          <li><a href="index.html" data-cs="Domů" data-en="Home">Domů</a></li>
+          <li><a href="portfolio.html" data-cs="Portfolio" data-en="Portfolio">Portfolio</a></li>
+          <li><a href="services.html" data-cs="Služby" data-en="Services">Služby</a></li>
+          <li><a href="contact.html" data-cs="Kontakt" data-en="Contact">Kontakt</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Kontakt</h4>
+        <h4 data-cs="Kontakt" data-en="Contact">Kontakt</h4>
         <ul>
           <li><a href="mailto:matej.kulisek99@icloud.com">matej.kulisek99@icloud.com</a></li>
           <li><a href="https://github.com/Kulisekmatej" target="_blank">github.com/Kulisekmatej</a></li>
-          <li><a href="https://www.credly.com/users/matej-kulisek" target="_blank">Credly — certifikáty</a></li>
+          <li><a href="https://www.credly.com/users/matej-kulisek" target="_blank"
+            data-cs="Credly — certifikáty" data-en="Credly — certificates">Credly — certifikáty</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Matěj Kulíšek · IČO: 24617334</span>
-      <span>IT Student & Freelance Developer · Česká republika</span>
+      <span>© 2026 Matěj Kulíšek · IČO: XXXXXXXX</span>
+      <span data-cs="IT Student & Freelance Developer · Česká republika"
+            data-en="IT Student & Freelance Developer · Czech Republic">IT Student & Freelance Developer · Česká republika</span>
     </div>
   </div>
 </footer>
@@ -355,5 +423,6 @@
     });
   }
 </script>
+<script src="lang.js"></script>
 </body>
 </html>

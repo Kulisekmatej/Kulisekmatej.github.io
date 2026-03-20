@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Služby — Matěj Kulíšek</title>
+  <title data-cs="Služby — Matěj Kulíšek" data-en="Services — Matěj Kulíšek">Služby — Matěj Kulíšek</title>
   <meta name="description" content="Tvorba webů, správa sociálních sítí a kompletní online prezence pro živnostníky a malé firmy v ČR.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -97,11 +97,12 @@
     <div class="nav-inner">
       <a href="index.html" class="nav-logo"><span class="nav-logo-dot"></span>Matěj Kulíšek</a>
       <ul class="nav-links">
-        <li><a href="index.html">Domů</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="services.html" class="active">Služby</a></li>
-        <li><a href="contact.html" class="nav-cta">Konzultace zdarma</a></li>
+        <li><a href="index.html" data-cs="Domů" data-en="Home">Domů</a></li>
+        <li><a href="portfolio.html" data-cs="Portfolio" data-en="Portfolio">Portfolio</a></li>
+        <li><a href="services.html" class="active" data-cs="Služby" data-en="Services">Služby</a></li>
+        <li><a href="contact.html" class="nav-cta" data-cs="Konzultace zdarma" data-en="Free consultation">Konzultace zdarma</a></li>
       </ul>
+      <div class="lang-toggle" style="margin-right:0.5rem;"></div>
       <button class="nav-mobile" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -110,9 +111,14 @@
 <!-- PAGE HERO -->
 <section class="page-hero">
   <div class="container">
-    <span class="badge badge-blue">Služby</span>
-    <h1 class="ph-title">Co pro vás mohu udělat?</h1>
-    <p class="ph-desc">Přehledné balíčky pro živnostníky a malé firmy. Konzultace je vždy zdarma a nezávazná.</p>
+    <span class="badge badge-blue" data-cs="Služby" data-en="Services">Služby</span>
+    <h1 class="ph-title"
+      data-cs="Co pro vás mohu udělat?"
+      data-en="What can I do for you?">Co pro vás mohu udělat?</h1>
+    <p class="ph-desc"
+      data-cs="Přehledné balíčky pro živnostníky a malé firmy. Konzultace je vždy zdarma a nezávazná."
+      data-en="Clear packages for freelancers and small businesses. Consultation is always free and non-binding.">
+      Přehledné balíčky pro živnostníky a malé firmy. Konzultace je vždy zdarma a nezávazná.</p>
   </div>
 </section>
 
@@ -122,72 +128,81 @@
     <div class="g3">
       <!-- WEB -->
       <div class="svc-full reveal" id="web">
-        <div class="svc-badge-row"><span class="badge badge-blue">Tvorba webu</span></div>
+        <div class="svc-badge-row"><span class="badge badge-blue" data-cs="Tvorba webu" data-en="Web development">Tvorba webu</span></div>
         <div class="svc-icon-lg">🌐</div>
-        <div class="svc-name-lg">Webové stránky</div>
-        <div class="svc-desc-lg">Moderní, rychlý a responzivní web na míru. Čistý kód bez zbytečných pluginů, který funguje na všech zařízeních.</div>
+        <div class="svc-name-lg" data-cs="Webové stránky" data-en="Website Development">Webové stránky</div>
+        <div class="svc-desc-lg"
+          data-cs="Moderní, rychlý a responzivní web na míru. Čistý kód bez zbytečných pluginů, který funguje na všech zařízeních."
+          data-en="Modern, fast and responsive custom website. Clean code without unnecessary plugins, working on all devices.">
+          Moderní, rychlý a responzivní web na míru. Čistý kód bez zbytečných pluginů, který funguje na všech zařízeních.</div>
         <ul class="svc-features">
-          <li><span class="ico">✓</span> Responzivní design (mobil, tablet, PC)</li>
-          <li><span class="ico">✓</span> Moderní a čistý vzhled na míru</li>
-          <li><span class="ico">✓</span> SEO základ (meta tagy, sitemap)</li>
-          <li><span class="ico">✓</span> Kontaktní formulář (Formspree)</li>
-          <li><span class="ico">✓</span> Google Analytics integrace</li>
-          <li><span class="ico">✓</span> Google Maps napojení</li>
-          <li><span class="ico">✓</span> Nasazení a spuštění v ceně</li>
+          <li><span class="ico">✓</span> <span data-cs="Responzivní design (mobil, tablet, PC)" data-en="Responsive design (mobile, tablet, PC)">Responzivní design (mobil, tablet, PC)</span></li>
+          <li><span class="ico">✓</span> <span data-cs="Moderní a čistý vzhled na míru" data-en="Modern and clean custom design">Moderní a čistý vzhled na míru</span></li>
+          <li><span class="ico">✓</span> <span data-cs="SEO základ (meta tagy, sitemap)" data-en="SEO basics (meta tags, sitemap)">SEO základ (meta tagy, sitemap)</span></li>
+          <li><span class="ico">✓</span> <span data-cs="Kontaktní formulář (Formspree)" data-en="Contact form (Formspree)">Kontaktní formulář (Formspree)</span></li>
+          <li><span class="ico">✓</span> <span data-cs="Google Analytics integrace" data-en="Google Analytics integration">Google Analytics integrace</span></li>
+          <li><span class="ico">✓</span> <span data-cs="Google Maps napojení" data-en="Google Maps integration">Google Maps napojení</span></li>
+          <li><span class="ico">✓</span> <span data-cs="Nasazení a spuštění v ceně" data-en="Deployment and launch included">Nasazení a spuštění v ceně</span></li>
         </ul>
         <hr class="svc-divider">
         <div class="svc-footer">
-          <div><div class="price-label">Cena od</div><div class="price-val">Dle rozsahu projektu</div></div>
-          <a href="contact.html" class="btn btn-primary">Poptávka →</a>
+          <div><div class="price-label" data-cs="Cena od" data-en="Starting from">Cena od</div><div class="price-val" data-cs="Dle rozsahu projektu" data-en="Based on project scope">Dle rozsahu projektu</div></div>
+          <a href="contact.html" class="btn btn-primary" data-cs="Poptávka →" data-en="Get a quote →">Poptávka →</a>
         </div>
       </div>
 
       <!-- SOCIAL -->
       <div class="svc-full reveal" id="social">
-        <div class="svc-badge-row"><span class="badge badge-blue">Správa sítí</span></div>
+        <div class="svc-badge-row"><span class="badge badge-blue" data-cs="Správa sítí" data-en="Social media">Správa sítí</span></div>
         <div class="svc-icon-lg">📱</div>
-        <div class="svc-name-lg">Sociální sítě</div>
-        <div class="svc-desc-lg">Pravidelný a vizuálně konzistentní obsah pro Instagram, Facebook nebo TikTok. Budujte komunitu a dostávejte zákazníky online.</div>
+        <div class="svc-name-lg" data-cs="Sociální sítě" data-en="Social Media">Sociální sítě</div>
+        <div class="svc-desc-lg"
+          data-cs="Pravidelný a vizuálně konzistentní obsah pro Instagram, Facebook nebo TikTok. Budujte komunitu a dostávejte zákazníky online."
+          data-en="Regular, visually consistent content for Instagram, Facebook or TikTok. Build a community and attract customers online.">
+          Pravidelný a vizuálně konzistentní obsah pro Instagram, Facebook nebo TikTok. Budujte komunitu a dostávejte zákazníky online.</div>
         <ul class="svc-features">
-          <li><span class="ico">✓</span> Plánování a tvorba obsahu</li>
-          <li><span class="ico">✓</span> Instagram / Facebook / TikTok</li>
-          <li><span class="ico">✓</span> Jednotný vizuální styl (brand)</li>
-          <li><span class="ico">✓</span> Pravidelný reporting & statistiky</li>
-          <li><span class="ico">✓</span> Doporučení pro organický růst</li>
-          <li><span class="ico">✓</span> Hashtagová strategie</li>
-          <li><span class="ico">✓</span> Komunikace s followers</li>
+          <li><span class="ico">✓</span> <span data-cs="Plánování a tvorba obsahu" data-en="Content planning and creation">Plánování a tvorba obsahu</span></li>
+          <li><span class="ico">✓</span> <span data-cs="Instagram / Facebook / TikTok" data-en="Instagram / Facebook / TikTok">Instagram / Facebook / TikTok</span></li>
+          <li><span class="ico">✓</span> <span data-cs="Jednotný vizuální styl (brand)" data-en="Consistent visual style (brand)">Jednotný vizuální styl (brand)</span></li>
+          <li><span class="ico">✓</span> <span data-cs="Pravidelný reporting & statistiky" data-en="Regular reporting & statistics">Pravidelný reporting & statistiky</span></li>
+          <li><span class="ico">✓</span> <span data-cs="Doporučení pro organický růst" data-en="Organic growth recommendations">Doporučení pro organický růst</span></li>
+          <li><span class="ico">✓</span> <span data-cs="Hashtagová strategie" data-en="Hashtag strategy">Hashtagová strategie</span></li>
+          <li><span class="ico">✓</span> <span data-cs="Komunikace s followers" data-en="Follower communication">Komunikace s followers</span></li>
         </ul>
         <hr class="svc-divider">
         <div class="svc-footer">
-          <div><div class="price-label">Cena od</div><div class="price-val">Měsíční spolupráce</div></div>
-          <a href="contact.html" class="btn btn-primary">Poptávka →</a>
+          <div><div class="price-label" data-cs="Cena od" data-en="Starting from">Cena od</div><div class="price-val" data-cs="Měsíční spolupráce" data-en="Monthly collaboration">Měsíční spolupráce</div></div>
+          <a href="contact.html" class="btn btn-primary" data-cs="Poptávka →" data-en="Get a quote →">Poptávka →</a>
         </div>
       </div>
 
       <!-- BUNDLE -->
       <div class="svc-full featured reveal" id="bundle">
-        <div class="svc-badge-row"><span class="badge badge-green">✓ Nejoblíbenější</span><span class="badge badge-blue">Balíček</span></div>
+        <div class="svc-badge-row"><span class="badge badge-green" data-cs="✓ Nejoblíbenější" data-en="✓ Most popular">✓ Nejoblíbenější</span><span class="badge badge-blue" data-cs="Balíček" data-en="Bundle">Balíček</span></div>
         <div class="svc-icon-lg">🚀</div>
-        <div class="svc-name-lg">Vše v jednom balíčku</div>
-        <div class="svc-desc-lg">Kompletní digitální start pro nové podnikání nebo firmy, které chtějí být vidět. Web + sociální sítě + Google Business — vše najednou.</div>
+        <div class="svc-name-lg" data-cs="Online prezence na klíč" data-en="Full Digital Package">Online prezence na klíč</div>
+        <div class="svc-desc-lg"
+          data-cs="Kompletní digitální start pro nové podnikání nebo firmy, které chtějí být vidět. Web + sociální sítě + Google Business — vše najednou."
+          data-en="Complete digital launch for new businesses or companies wanting visibility. Website + social media + Google Business — all in one.">
+          Kompletní digitální start pro nové podnikání nebo firmy, které chtějí být vidět. Web + sociální sítě + Google Business — vše najednou.</div>
         <ul class="svc-features">
-          <li><span class="ico">✓</span> Webová stránka na míru</li>
-          <li><span class="ico">✓</span> Nastavení & správa sociálních sítí</li>
-          <li><span class="ico">✓</span> Google Business profil (správa)</li>
-          <li><span class="ico">✓</span> Propojení všech kanálů</li>
-          <li><span class="ico">✓</span> Úvodní konzultace zdarma</li>
-          <li><span class="ico">✓</span> Jednotný vizuální brand</li>
-          <li><span class="ico">✓</span> Podpora po spuštění</li>
+          <li><span class="ico">✓</span> <span data-cs="Webová stránka na míru" data-en="Custom website">Webová stránka na míru</span></li>
+          <li><span class="ico">✓</span> <span data-cs="Nastavení & správa sociálních sítí" data-en="Social media setup & management">Nastavení & správa sociálních sítí</span></li>
+          <li><span class="ico">✓</span> <span data-cs="Google Business profil (správa)" data-en="Google Business profile (management)">Google Business profil (správa)</span></li>
+          <li><span class="ico">✓</span> <span data-cs="Propojení všech kanálů" data-en="All channels connected">Propojení všech kanálů</span></li>
+          <li><span class="ico">✓</span> <span data-cs="Úvodní konzultace zdarma" data-en="Free initial consultation">Úvodní konzultace zdarma</span></li>
+          <li><span class="ico">✓</span> <span data-cs="Jednotný vizuální brand" data-en="Consistent visual brand">Jednotný vizuální brand</span></li>
+          <li><span class="ico">✓</span> <span data-cs="Podpora po spuštění" data-en="Post-launch support">Podpora po spuštění</span></li>
         </ul>
         <hr class="svc-divider">
         <div class="svc-footer">
-          <div><div class="price-label">Cena od</div><div class="price-val">Individuální nabídka</div></div>
-          <a href="contact.html" class="btn btn-primary">Poptávka →</a>
+          <div><div class="price-label" data-cs="Cena od" data-en="Starting from">Cena od</div><div class="price-val" data-cs="Individuální nabídka" data-en="Custom quote">Individuální nabídka</div></div>
+          <a href="contact.html" class="btn btn-primary" data-cs="Poptávka →" data-en="Get a quote →">Poptávka →</a>
         </div>
       </div>
     </div>
     <div class="services-note reveal">
-      <strong>💡 Jak funguje cena?</strong> Každý projekt je jiný — cena závisí na rozsahu a náročnosti. Napište mi přes kontaktní formulář nebo e-mail, probereme vaše požadavky a připravím nezávaznou nabídku. Konzultace je vždy zdarma.
+      <strong data-cs="💡 Jak funguje cena?" data-en="💡 How does pricing work?">💡 Jak funguje cena?</strong><span data-cs=" Každý projekt je jiný — cena závisí na rozsahu a náročnosti. Napište mi přes kontaktní formulář nebo e-mail, probereme vaše požadavky a připravím nezávaznou nabídku. Konzultace je vždy zdarma." data-en=" Every project is different — the price depends on scope and complexity. Send me a message via the contact form or email, we'll discuss your requirements and I'll prepare a no-obligation quote. Consultation is always free."> Každý projekt je jiný — cena závisí na rozsahu a náročnosti. Napište mi přes kontaktní formulář nebo e-mail, probereme vaše požadavky a připravím nezávaznou nabídku. Konzultace je vždy zdarma.</span>
     </div>
   </div>
 </section>
@@ -196,30 +211,45 @@
 <section class="process-section">
   <div class="container">
     <div class="section-hd c reveal">
-      <div class="section-eyebrow">Postup spolupráce</div>
-      <h2 class="section-title">Jak to funguje?</h2>
-      <p class="section-desc">Jednoduchý a transparentní proces od prvního kontaktu po spuštění.</p>
+      <div class="section-eyebrow" data-cs="Postup spolupráce" data-en="How we work">Postup spolupráce</div>
+      <h2 class="section-title" data-cs="Jak to funguje?" data-en="How does it work?">Jak to funguje?</h2>
+      <p class="section-desc"
+        data-cs="Jednoduchý a transparentní proces od prvního kontaktu po spuštění."
+        data-en="A simple and transparent process from first contact to launch.">
+        Jednoduchý a transparentní proces od prvního kontaktu po spuštění.</p>
     </div>
     <div class="process-steps">
       <div class="pstep reveal">
         <div class="pstep-num">1</div>
-        <div class="pstep-title">Konzultace</div>
-        <div class="pstep-desc">Napíšete mi s popisem projektu. Probereme požadavky, timeline a cíle — bez závazků a zdarma.</div>
+        <div class="pstep-title" data-cs="Konzultace" data-en="Consultation">Konzultace</div>
+        <div class="pstep-desc"
+          data-cs="Napíšete mi s popisem projektu. Probereme požadavky, timeline a cíle — bez závazků a zdarma."
+          data-en="Send me a project description. We'll discuss requirements, timeline and goals — free and non-binding.">
+          Napíšete mi s popisem projektu. Probereme požadavky, timeline a cíle — bez závazků a zdarma.</div>
       </div>
       <div class="pstep reveal">
         <div class="pstep-num">2</div>
-        <div class="pstep-title">Nabídka</div>
-        <div class="pstep-desc">Připravím konkrétní nabídku s rozsahem prací, cenou a termínem dodání. Vše písemně, jasně.</div>
+        <div class="pstep-title" data-cs="Nabídka" data-en="Quote">Nabídka</div>
+        <div class="pstep-desc"
+          data-cs="Připravím konkrétní nabídku s rozsahem prací, cenou a termínem dodání. Vše písemně, jasně."
+          data-en="I'll prepare a specific quote with scope, price and delivery date. Everything in writing, clearly.">
+          Připravím konkrétní nabídku s rozsahem prací, cenou a termínem dodání. Vše písemně, jasně.</div>
       </div>
       <div class="pstep reveal">
         <div class="pstep-num">3</div>
-        <div class="pstep-title">Realizace</div>
-        <div class="pstep-desc">Pracuji na projektu a průběžně vás informuji. Dostáváte náhledy a zapracovávám vaše připomínky.</div>
+        <div class="pstep-title" data-cs="Realizace" data-en="Development">Realizace</div>
+        <div class="pstep-desc"
+          data-cs="Pracuji na projektu a průběžně vás informuji. Dostáváte náhledy a zapracovávám vaše připomínky."
+          data-en="I work on the project and keep you updated. You receive previews and I incorporate your feedback.">
+          Pracuji na projektu a průběžně vás informuji. Dostáváte náhledy a zapracovávám vaše připomínky.</div>
       </div>
       <div class="pstep reveal">
         <div class="pstep-num">4</div>
-        <div class="pstep-title">Předání & podpora</div>
-        <div class="pstep-desc">Web nasadím, vše nastavím a předám. Jsem k dispozici i po dokončení projektu pro dotazy.</div>
+        <div class="pstep-title" data-cs="Předání & podpora" data-en="Handover & support">Předání & podpora</div>
+        <div class="pstep-desc"
+          data-cs="Web nasadím, vše nastavím a předám. Jsem k dispozici i po dokončení projektu pro dotazy."
+          data-en="I deploy everything, set it up and hand it over. Available for questions after project completion too.">
+          Web nasadím, vše nastavím a předám. Jsem k dispozici i po dokončení projektu pro dotazy.</div>
       </div>
     </div>
   </div>
@@ -229,33 +259,59 @@
 <section>
   <div class="container" style="max-width:720px;">
     <div class="section-hd c reveal">
-      <div class="section-eyebrow">Časté dotazy</div>
-      <h2 class="section-title">Máte otázky?</h2>
+      <div class="section-eyebrow" data-cs="Časté dotazy" data-en="FAQ">Časté dotazy</div>
+      <h2 class="section-title" data-cs="Máte otázky?" data-en="Got questions?">Máte otázky?</h2>
     </div>
     <div class="faq-list reveal">
       <div class="faq-item">
-        <button class="faq-q">Jak dlouho trvá tvorba webu? <span class="faq-arrow">▾</span></button>
-        <div class="faq-a">Záleží na rozsahu. Jednoduchý jednostránkový web (jako vizitka nebo landing page) bývá hotový za 1–2 týdny. Složitější weby s více sekcemi nebo speciálními funkcemi mohou trvat 3–4 týdny. Přesný termín stanovím v nabídce.</div>
+        <button class="faq-q" data-cs="Jak dlouho trvá tvorba webu? " data-en="How long does website development take? ">Jak dlouho trvá tvorba webu? <span class="faq-arrow">▾</span></button>
+        <div class="faq-a"
+          data-cs="Záleží na rozsahu. Jednoduchý jednostránkový web (jako vizitka nebo landing page) bývá hotový za 1–2 týdny. Složitější weby s více sekcemi nebo speciálními funkcemi mohou trvat 3–4 týdny. Přesný termín stanovím v nabídce."
+          data-en="It depends on the scope. A simple one-page website (like a business card or landing page) is usually done in 1–2 weeks. More complex sites with multiple sections or special features can take 3–4 weeks. I'll set an exact deadline in the quote.">
+          Záleží na rozsahu. Jednoduchý jednostránkový web (jako vizitka nebo landing page) bývá hotový za 1–2 týdny. Složitější weby s více sekcemi nebo speciálními funkcemi mohou trvat 3–4 týdny. Přesný termín stanovím v nabídce.</div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">Na jaké platformě bude web postavený? <span class="faq-arrow">▾</span></button>
-        <div class="faq-a">Stavím weby v čistém HTML/CSS/JS bez nutnosti drahých CMS systémů nebo měsíčních poplatků za hosting. Pro jednoduché stránky je to ideální řešení — rychlé, levné a bezpečné. Pokud potřebujete redakční systém (WordPress apod.), domluvíme se.</div>
+        <button class="faq-q" data-cs="Na jaké platformě bude web postavený? " data-en="What platform will the website be built on? ">Na jaké platformě bude web postavený? <span class="faq-arrow">▾</span></button>
+        <div class="faq-a"
+          data-cs="Stavím weby v čistém HTML/CSS/JS bez nutnosti drahých CMS systémů nebo měsíčních poplatků za hosting. Pro jednoduché stránky je to ideální řešení — rychlé, levné a bezpečné. Pokud potřebujete redakční systém (WordPress apod.), domluvíme se."
+          data-en="I build websites in pure HTML/CSS/JS without expensive CMS systems or monthly hosting fees. For simple sites this is the ideal solution — fast, affordable and secure. If you need a CMS (WordPress etc.), we can discuss it.">
+          Stavím weby v čistém HTML/CSS/JS bez nutnosti drahých CMS systémů nebo měsíčních poplatků za hosting. Pro jednoduché stránky je to ideální řešení — rychlé, levné a bezpečné. Pokud potřebujete redakční systém (WordPress apod.), domluvíme se.</div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">Musím platit za hosting? <span class="faq-arrow">▾</span></button>
-        <div class="faq-a">Pro statické weby mohu použít GitHub Pages nebo Cloudflare Pages, které jsou zdarma. Doménu (.cz nebo .com) si pořídíte za cca 200–500 Kč/rok. Varianta s placeným hostingem je samozřejmě taky možná, pokud v budoucnu potřebujete více funkcí (PHP, databáze, e-mail hosting)."</div>
+        <button class="faq-q"
+          data-cs="Musím platit za hosting? "
+          data-en="Do I need to pay for hosting? ">Musím platit za hosting? <span class="faq-arrow">▾</span></button>
+        <div class="faq-a"
+          data-cs="Pro statické weby mohu použít GitHub Pages nebo Cloudflare Pages, které jsou zdarma. Doménu (.cz nebo .com) si pořídíte za cca 200–500 Kč/rok. Varianta s placeným hostingem je samozřejmě taky možná, pokud preferujete."
+          data-en="For static websites I can use GitHub Pages or Cloudflare Pages, which are free. A domain (.cz or .com) costs around 200–500 CZK/year. Paid hosting is also possible if you prefer.">
+          Pro statické weby mohu použít GitHub Pages nebo Cloudflare Pages, které jsou zdarma. Doménu (.cz nebo .com) si pořídíte za cca 200–500 Kč/rok. Varianta s placeným hostingem je samozřejmě taky možná, pokud preferujete.</div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">Mohu si web sám upravovat? <span class="faq-arrow">▾</span></button>
-        <div class="faq-a">Ano. Kód předám přehledně komentovaný. Pokud chcete jednoduché úpravy (texty, fotky), naučím vás, jak na to. Pro náročnější změny se vždy ozvěte — rád pomůžu.</div>
+        <button class="faq-q"
+          data-cs="Mohu si web sám upravovat? "
+          data-en="Can I edit the website myself? ">Mohu si web sám upravovat? <span class="faq-arrow">▾</span></button>
+        <div class="faq-a"
+          data-cs="Ano. Kód předám přehledně komentovaný. Pokud chcete jednoduché úpravy (texty, fotky), naučím vás, jak na to. Pro náročnější změny se vždy ozvěte — rád pomůžu."
+          data-en="Yes. I hand over the code with clear comments. If you want simple edits (text, photos), I'll show you how. For more complex changes, just get in touch — I'm happy to help.">
+          Ano. Kód předám přehledně komentovaný. Pokud chcete jednoduché úpravy (texty, fotky), naučím vás, jak na to. Pro náročnější změny se vždy ozvěte — rád pomůžu.</div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">Spolupracujete i se živnostníky bez s.r.o.? <span class="faq-arrow">▾</span></button>
-        <div class="faq-a">Samozřejmě! Sám jsem OSVČ a rozumím potřebám živnostníků. Vystavím fakturu, vše proběhne korektně. Pracuji s fyzickými osobami i firmami.</div>
+        <button class="faq-q"
+          data-cs="Spolupracujete i se živnostníky bez s.r.o.? "
+          data-en="Do you work with sole traders without a limited company? ">Spolupracujete i se živnostníky bez s.r.o.? <span class="faq-arrow">▾</span></button>
+        <div class="faq-a"
+          data-cs="Samozřejmě! Sám jsem OSVČ (vedlejší činnost) a rozumím potřebám živnostníků. Vystavím fakturu, vše proběhne korektně. Pracuji s fyzickými osobami i firmami."
+          data-en="Of course! I'm a sole trader myself and understand the needs of freelancers and small businesses. I issue invoices and everything is handled correctly. I work with both individuals and companies.">
+          Samozřejmě! Sám jsem OSVČ (vedlejší činnost) a rozumím potřebám živnostníků. Vystavím fakturu, vše proběhne korektně. Pracuji s fyzickými osobami i firmami.</div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">Jak probíhá platba? <span class="faq-arrow">▾</span></button>
-        <div class="faq-a">Standardně záloha 50 % před zahájením, doplatek 50 % při předání. U menších projektů lze domluvit platbu celé částky po dokončení. Platba bankovním převodem, vystavenou fakturou.</div>
+        <button class="faq-q"
+          data-cs="Jak probíhá platba? "
+          data-en="How does payment work? ">Jak probíhá platba? <span class="faq-arrow">▾</span></button>
+        <div class="faq-a"
+          data-cs="Standardně záloha 50 % před zahájením, doplatek 50 % při předání. U menších projektů lze domluvit platbu celé částky po dokončení. Platba bankovním převodem, vystavenou fakturou."
+          data-en="Standard terms are 50% deposit upfront and 50% on delivery. For smaller projects the full amount can be paid on completion. Payment by bank transfer with an issued invoice.">
+          Standardně záloha 50 % před zahájením, doplatek 50 % při předání. U menších projektů lze domluvit platbu celé částky po dokončení. Platba bankovním převodem, vystavenou fakturou.</div>
       </div>
     </div>
   </div>
@@ -265,9 +321,14 @@
 <section style="background:var(--bg);border-top:1px solid var(--border);padding:4rem 0;">
   <div class="container" style="text-align:center;">
     <div class="reveal">
-      <h2 class="section-title" style="margin-bottom:0.75rem;">Připraveni začít?</h2>
-      <p style="color:var(--ink-2);margin-bottom:1.75rem;max-width:450px;margin-left:auto;margin-right:auto;">Napište mi a do 24 hodin se ozvu zpátky s odpovědí a dalším krokem.</p>
-      <a href="contact.html" class="btn btn-primary btn-lg">Napsat zprávu →</a>
+      <h2 class="section-title" style="margin-bottom:0.75rem;"
+        data-cs="Připraveni začít?" data-en="Ready to get started?">Připraveni začít?</h2>
+      <p style="color:var(--ink-2);margin-bottom:1.75rem;max-width:450px;margin-left:auto;margin-right:auto;"
+        data-cs="Napište mi a do 24 hodin se ozvu zpátky s odpovědí a dalším krokem."
+        data-en="Send me a message and I'll get back to you within 24 hours with a reply and next steps.">
+        Napište mi a do 24 hodin se ozvu zpátky s odpovědí a dalším krokem.</p>
+      <a href="contact.html" class="btn btn-primary btn-lg"
+        data-cs="Napsat zprávu →" data-en="Send a message →">Napsat zprávu →</a>
     </div>
   </div>
 </section>
@@ -275,22 +336,40 @@
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-brand"><div class="f-logo">Matěj Kulíšek</div><p>IT student & freelance developer.</p></div>
-      <div class="footer-col"><h4>Navigace</h4><ul><li><a href="index.html">Domů</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="services.html">Služby</a></li><li><a href="contact.html">Kontakt</a></li></ul></div>
-      <div class="footer-col"><h4>Kontakt</h4><ul><li><a href="mailto:matej.kulisek99@icloud.com">matej.kulisek99@icloud.com</a></li><li><a href="https://github.com/Kulisekmatej" target="_blank">github.com/Kulisekmatej</a></li></ul></div>
+      <div class="footer-brand">
+        <div class="f-logo">Matěj Kulíšek</div>
+        <p data-cs="IT student & freelance developer." data-en="IT student & freelance developer.">IT student & freelance developer.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-cs="Navigace" data-en="Navigation">Navigace</h4>
+        <ul>
+          <li><a href="index.html" data-cs="Domů" data-en="Home">Domů</a></li>
+          <li><a href="portfolio.html" data-cs="Portfolio" data-en="Portfolio">Portfolio</a></li>
+          <li><a href="services.html" data-cs="Služby" data-en="Services">Služby</a></li>
+          <li><a href="contact.html" data-cs="Kontakt" data-en="Contact">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-cs="Kontakt" data-en="Contact">Kontakt</h4>
+        <ul>
+          <li><a href="mailto:matej.kulisek99@icloud.com">matej.kulisek99@icloud.com</a></li>
+          <li><a href="https://github.com/Kulisekmatej" target="_blank">github.com/Kulisekmatej</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="footer-bottom"><span>© 2026 Matěj Kulíšek · IČO: 24617334</span><span>IT Student & Freelance Developer · ČR</span></div>
+    <div class="footer-bottom">
+      <span>© 2026 Matěj Kulíšek · IČO: XXXXXXXX</span>
+      <span data-cs="IT Student & Freelance Developer · ČR" data-en="IT Student & Freelance Developer · Czech Republic">IT Student & Freelance Developer · ČR</span>
+    </div>
   </div>
 </footer>
 
 <script>
-  // Reveal
   const obs = new IntersectionObserver(entries => {
     entries.forEach((e,i) => { if(e.isIntersecting) { setTimeout(()=>e.target.classList.add('v'), i*90); obs.unobserve(e.target); }});
   }, {threshold:0.08});
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-  // FAQ accordion
   document.querySelectorAll('.faq-q').forEach(btn => {
     btn.addEventListener('click', () => {
       const item = btn.closest('.faq-item');
@@ -300,10 +379,10 @@
     });
   });
 
-  // Mobile nav
   const toggle = document.getElementById('navToggle');
   const navLinks = document.querySelector('.nav-links');
   if(toggle && navLinks) toggle.addEventListener('click', () => { const open = navLinks.style.display==='flex'; navLinks.style.cssText = open ? '' : 'display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:1rem 1.5rem;gap:0.25rem;'; });
 </script>
+<script src="lang.js"></script>
 </body>
 </html>

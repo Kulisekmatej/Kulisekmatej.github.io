@@ -110,11 +110,12 @@
     <div class="nav-inner">
       <a href="index.html" class="nav-logo"><span class="nav-logo-dot"></span>Matěj Kulíšek</a>
       <ul class="nav-links">
-        <li><a href="index.html">Domů</a></li>
-        <li><a href="portfolio.html" class="active">Portfolio</a></li>
-        <li><a href="services.html">Služby</a></li>
-        <li><a href="contact.html" class="nav-cta">Konzultace zdarma</a></li>
+        <li><a href="index.html" data-cs="Domů" data-en="Home">Domů</a></li>
+        <li><a href="portfolio.html" class="active" data-cs="Portfolio" data-en="Portfolio">Portfolio</a></li>
+        <li><a href="services.html" data-cs="Služby" data-en="Services">Služby</a></li>
+        <li><a href="contact.html" class="nav-cta" data-cs="Konzultace zdarma" data-en="Free consultation">Konzultace zdarma</a></li>
       </ul>
+      <div class="lang-toggle" style="margin-right:0.5rem;"></div>
       <button class="nav-mobile" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -126,23 +127,32 @@
     <div class="page-hero-inner">
       <div>
         <div class="ph-eyebrow"><span class="badge badge-blue">Portfolio</span></div>
-        <h1 class="ph-title">Ahoj, jsem<br><span class="gtext">Matěj Kulíšek.</span></h1>
-        <p class="ph-desc">
+        <h1 class="ph-title">
+          <span data-cs="Ahoj, jsem" data-en="Hey, I'm">Ahoj, jsem</span><br>
+          <span class="gtext">Matěj Kulíšek.</span>
+        </h1>
+        <p class="ph-desc"
+          data-cs="IT student na střední škole, zaměřený na vývoj aplikací, sítě a kybernetickou bezpečnost. Momentálně se připravuji na maturitu a buduju kariéru v IT — popri studiu se věnuji freelance práci pro malé firmy a živnostníky."
+          data-en="Secondary school IT student focused on app development, networking and cybersecurity. Currently preparing for my final exams while building an IT career — alongside studies I do freelance work for small businesses.">
           IT student na střední škole, zaměřený na vývoj aplikací, sítě a kybernetickou bezpečnost. 
-          Momentálně se připravuji na maturitu a buduju kariéru v IT — při studiu se věnuji freelance práci pro malé firmy a živnostníky.
+          Momentálně se připravuji na maturitu a buduju kariéru v IT — popri studiu se věnuji freelance práci pro malé firmy a živnostníky.
         </p>
         <div class="ph-actions">
           <a href="https://github.com/Kulisekmatej" target="_blank" class="btn btn-secondary">GitHub ↗</a>
-          <a href="https://www.credly.com/users/matej-kulisek" target="_blank" class="btn btn-ghost">Credly — certifikáty ↗</a>
+          <a href="https://www.credly.com/users/matej-kulisek" target="_blank" class="btn btn-ghost"
+            data-cs="Credly — certifikáty ↗" data-en="Credly — certificates ↗">Credly — certifikáty ↗</a>
         </div>
       </div>
       <div class="about-card reveal">
-        <div class="about-bio">Baví mě programování, síťová bezpečnost a tvorba her. Ve volném čase se učím nové věci a snažím se posouvat se dál. Cílem je stát se full-stack developerem nebo bezpečnostním specialistou.</div>
+        <div class="about-bio"
+          data-cs="Baví mě programování, síťová bezpečnost a tvorba her. Ve volném čase se učím nové technologie a snažím se posouvat se dál. Cílem je stát se full-stack developerem nebo bezpečnostním specialistou."
+          data-en="I enjoy programming, network security and game development. In my free time I learn new technologies and push my skills further. My goal is to become a full-stack developer or security specialist.">
+          Baví mě programování, síťová bezpečnost a tvorba her. Ve volném čase se učím nové technologie a snažím se posouvat se dál. Cílem je stát se full-stack developerem nebo bezpečnostním specialistou.</div>
         <div class="about-stat-grid">
-          <div class="astat"><div class="astat-num">4+</div><div class="astat-lbl">Roky studia IT</div></div>
-          <div class="astat"><div class="astat-num">5+</div><div class="astat-lbl">Projektů</div></div>
-          <div class="astat"><div class="astat-num">3+</div><div class="astat-lbl">Prog. jazyků</div></div>
-          <div class="astat"><div class="astat-num">2</div><div class="astat-lbl">Certifikace</div></div>
+          <div class="astat"><div class="astat-num">4+</div><div class="astat-lbl" data-cs="Roky studia IT" data-en="Years studying IT">Roky studia IT</div></div>
+          <div class="astat"><div class="astat-num">5+</div><div class="astat-lbl" data-cs="Projektů" data-en="Projects">Projektů</div></div>
+          <div class="astat"><div class="astat-num">3+</div><div class="astat-lbl" data-cs="Prog. jazyků" data-en="Prog. languages">Prog. jazyků</div></div>
+          <div class="astat"><div class="astat-num">2</div><div class="astat-lbl" data-cs="Certifikace" data-en="Certifications">Certifikace</div></div>
         </div>
       </div>
     </div>
@@ -153,45 +163,66 @@
 <section>
   <div class="container">
     <div class="section-hd reveal">
-      <div class="section-eyebrow">Dovednosti</div>
-      <h2 class="section-title">Co umím</h2>
-      <p class="section-desc">programování, sítě a webový vývoj</p>
+      <div class="section-eyebrow" data-cs="Dovednosti" data-en="Skills">Dovednosti</div>
+      <h2 class="section-title" data-cs="Co umím" data-en="What I can do">Co umím</h2>
+      <p class="section-desc"
+        data-cs="Kombinace programování, sítí a webového vývoje — základ pro moderní IT kariéru."
+        data-en="A combination of programming, networking and web development — the foundation for a modern IT career.">
+        Kombinace programování, sítí a webového vývoje — základ pro moderní IT kariéru.</p>
     </div>
     <div class="g3">
       <div class="skill-card reveal">
         <div class="sk-icon">⚡</div>
-        <div class="sk-name">Programování</div>
-        <div class="sk-desc">Vývoj aplikací v C++ s Qt frameworkem, OOP principy, algoritmy a datové struktury.</div>
+        <div class="sk-name" data-cs="Programování" data-en="Programming">Programování</div>
+        <div class="sk-desc"
+          data-cs="Vývoj aplikací v C++ s Qt frameworkem, OOP principy, algoritmy a datové struktury."
+          data-en="App development in C++ with Qt framework, OOP principles, algorithms and data structures.">
+          Vývoj aplikací v C++ s Qt frameworkem, OOP principy, algoritmy a datové struktury.</div>
         <div class="sk-tags"><span class="tag">C++</span><span class="tag">Qt</span><span class="tag">Python</span><span class="tag">Lua</span></div>
       </div>
       <div class="skill-card reveal">
         <div class="sk-icon">🌐</div>
-        <div class="sk-name">Sítě & Infrastruktura</div>
-        <div class="sk-desc">ISO/OSI model, TCP/IP, routing, switching, VLAN a správa síťové infrastruktury.</div>
+        <div class="sk-name" data-cs="Sítě & Infrastruktura" data-en="Networks & Infrastructure">Sítě & Infrastruktura</div>
+        <div class="sk-desc"
+          data-cs="ISO/OSI model, TCP/IP, routing, switching, VLAN a správa síťové infrastruktury."
+          data-en="ISO/OSI model, TCP/IP, routing, switching, VLAN and network infrastructure management.">
+          ISO/OSI model, TCP/IP, routing, switching, VLAN a správa síťové infrastruktury.</div>
         <div class="sk-tags"><span class="tag">TCP/IP</span><span class="tag">Routing</span><span class="tag">DNS</span><span class="tag">VLAN</span><span class="tag tag-accent">✓ CCNA</span></div>
       </div>
       <div class="skill-card reveal">
         <div class="sk-icon">🛡️</div>
-        <div class="sk-name">Kybernetická bezpečnost</div>
-        <div class="sk-desc">Šifrování, VPN technologie, hardening systémů, penetrační testování a bezpečné síťové návrhy.</div>
+        <div class="sk-name" data-cs="Kybernetická bezpečnost" data-en="Cybersecurity">Kybernetická bezpečnost</div>
+        <div class="sk-desc"
+          data-cs="Šifrování, VPN technologie, hardening systémů, penetrační testování a bezpečné síťové návrhy."
+          data-en="Encryption, VPN technologies, system hardening, penetration testing and secure network design.">
+          Šifrování, VPN technologie, hardening systémů, penetrační testování a bezpečné síťové návrhy.</div>
         <div class="sk-tags"><span class="tag">VPN</span><span class="tag">Encryption</span><span class="tag">Linux</span><span class="tag tag-accent">✓ Security+</span></div>
       </div>
       <div class="skill-card reveal">
         <div class="sk-icon">🌍</div>
-        <div class="sk-name">Web & Frontend</div>
-        <div class="sk-desc">Tvorba responzivních webů, moderní HTML/CSS, JavaScript, SEO optimalizace a Google Analytics.</div>
+        <div class="sk-name" data-cs="Web & Frontend" data-en="Web & Frontend">Web & Frontend</div>
+        <div class="sk-desc"
+          data-cs="Tvorba responzivních webů, moderní HTML/CSS, JavaScript, SEO optimalizace a Google Analytics."
+          data-en="Responsive website development, modern HTML/CSS, JavaScript, SEO optimisation and Google Analytics.">
+          Tvorba responzivních webů, moderní HTML/CSS, JavaScript, SEO optimalizace a Google Analytics.</div>
         <div class="sk-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">SEO</span></div>
       </div>
       <div class="skill-card reveal">
         <div class="sk-icon">🗄️</div>
-        <div class="sk-name">Databáze</div>
-        <div class="sk-desc">Návrh a správa databází, SQL dotazy, relační modely a základy optimalizace.</div>
-        <div class="sk-tags"><span class="tag">SQL</span><span class="tag">MySQL</span><span class="tag">Návrh DB</span></div>
+        <div class="sk-name" data-cs="Databáze" data-en="Databases">Databáze</div>
+        <div class="sk-desc"
+          data-cs="Návrh a správa databází, SQL dotazy, relační modely a základy optimalizace."
+          data-en="Database design and management, SQL queries, relational models and optimisation basics.">
+          Návrh a správa databází, SQL dotazy, relační modely a základy optimalizace.</div>
+        <div class="sk-tags"><span class="tag">SQL</span><span class="tag">MySQL</span><span class="tag" data-cs="Návrh DB" data-en="DB Design">Návrh DB</span></div>
       </div>
       <div class="skill-card reveal">
         <div class="sk-icon">🎮</div>
-        <div class="sk-name">Game Development</div>
-        <div class="sk-desc">Tvorba her v Roblox Studiu, herní mechaniky, game design a skriptování v Lua.</div>
+        <div class="sk-name" data-cs="Game Development" data-en="Game Development">Game Development</div>
+        <div class="sk-desc"
+          data-cs="Tvorba her v Roblox Studiu, herní mechaniky, game design a skriptování v Lua."
+          data-en="Game creation in Roblox Studio, game mechanics, game design and Lua scripting.">
+          Tvorba her v Roblox Studiu, herní mechaniky, game design a skriptování v Lua.</div>
         <div class="sk-tags"><span class="tag">Roblox Studio</span><span class="tag">Lua</span><span class="tag">Game Design</span></div>
       </div>
     </div>
@@ -202,8 +233,8 @@
 <section style="background:var(--bg);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
   <div class="container">
     <div class="section-hd reveal">
-      <div class="section-eyebrow">Projekty</div>
-      <h2 class="section-title">Na čem pracuji</h2>
+      <div class="section-eyebrow" data-cs="Projekty" data-en="Projects">Projekty</div>
+      <h2 class="section-title" data-cs="Na čem pracuji" data-en="What I'm working on">Na čem pracuji</h2>
     </div>
     <div class="g2">
       <div class="proj-card reveal">
@@ -211,12 +242,18 @@
           <div class="proj-img-placeholder">🖌️<small>Airless Malby Kreisinger</small></div>
         </div>
         <div class="proj-body">
-          <div class="proj-badge-row"><span class="badge badge-blue">Zakázka</span><span class="badge badge-green">✓ Live</span></div>
+          <div class="proj-badge-row">
+            <span class="badge badge-blue" data-cs="Zakázka" data-en="Client work">Zakázka</span>
+            <span class="badge badge-green">✓ Live</span>
+          </div>
           <div class="proj-name">Airless Malby Kreisinger</div>
-          <div class="proj-desc">Profesionální jednostránkový web pro malířskou firmu. Responzivní design, SEO, Google Analytics, kontaktní formulář a Google Maps integrace.</div>
+          <div class="proj-desc"
+            data-cs="Profesionální jednostránkový web pro malířskou firmu. Responzivní design, SEO, Google Analytics, kontaktní formulář a Google Maps integrace."
+            data-en="Professional one-page website for a painting company. Responsive design, SEO, Google Analytics, contact form and Google Maps integration.">
+            Profesionální jednostránkový web pro malířskou firmu. Responzivní design, SEO, Google Analytics, kontaktní formulář a Google Maps integrace.</div>
           <div class="proj-foot">
             <div class="proj-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span><span class="tag">SEO</span></div>
-            <a href="#" class="proj-link">Zobrazit →</a>
+            <a href="https://www.airlessmalby.cz/" class="proj-link" data-cs="Zobrazit →" data-en="View →">Zobrazit →</a>
           </div>
         </div>
       </div>
@@ -225,12 +262,18 @@
           <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=700&auto=format&fit=crop&q=70" alt="Portfolio web">
         </div>
         <div class="proj-body">
-          <div class="proj-badge-row"><span class="badge badge-gray">Osobní</span></div>
-          <div class="proj-name">Portfolio Web</div>
-          <div class="proj-desc">Osobní webová stránka postavená od nuly v čistém HTML, CSS a JavaScriptu. GitHub Pages hosting.</div>
+          <div class="proj-badge-row">
+            <span class="badge badge-gray" data-cs="Osobní" data-en="Personal">Osobní</span>
+          </div>
+          <div class="proj-name" data-cs="Portfolio Web" data-en="Portfolio Website">Portfolio Web</div>
+          <div class="proj-desc"
+            data-cs="Osobní webová stránka postavená od nuly v čistém HTML, CSS a JavaScriptu. GitHub Pages hosting."
+            data-en="Personal website built from scratch in pure HTML, CSS and JavaScript. Hosted on GitHub Pages.">
+            Osobní webová stránka postavená od nuly v čistém HTML, CSS a JavaScriptu. GitHub Pages hosting.</div>
           <div class="proj-foot">
             <div class="proj-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
-            <a href="https://github.com/Kulisekmatej/Kulisekmatej.github.io" class="proj-link" target="_blank">Kód →</a>
+            <a href="https://github.com/Kulisekmatej/Kulisekmatej.github.io" class="proj-link" target="_blank"
+              data-cs="Kód →" data-en="Code →">Kód →</a>
           </div>
         </div>
       </div>
@@ -239,12 +282,18 @@
           <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=700&auto=format&fit=crop&q=70" alt="Síťový analyzátor">
         </div>
         <div class="proj-body">
-          <div class="proj-badge-row"><span class="badge badge-gray">Školní</span></div>
-          <div class="proj-name">Síťový Analyzátor</div>
-          <div class="proj-desc">Nástroj pro analýzu síťového provozu a monitorování připojení napsaný v C++ s Qt frameworkem.</div>
+          <div class="proj-badge-row">
+            <span class="badge badge-gray" data-cs="Školní" data-en="School">Školní</span>
+          </div>
+          <div class="proj-name" data-cs="Síťový Analyzátor" data-en="Network Analyser">Síťový Analyzátor</div>
+          <div class="proj-desc"
+            data-cs="Nástroj pro analýzu síťového provozu a monitorování připojení napsaný v C++ s Qt frameworkem."
+            data-en="A network traffic analysis and connection monitoring tool written in C++ with the Qt framework.">
+            Nástroj pro analýzu síťového provozu a monitorování připojení napsaný v C++ s Qt frameworkem.</div>
           <div class="proj-foot">
             <div class="proj-tags"><span class="tag">C++</span><span class="tag">Qt</span></div>
-            <a href="https://github.com/Kulisekmatej/Network-Traffic-Analyzer" class="proj-link" target="_blank">Kód →</a>
+            <a href="https://github.com/Kulisekmatej/Network-Traffic-Analyzer" class="proj-link" target="_blank"
+              data-cs="Kód →" data-en="Code →">Kód →</a>
           </div>
         </div>
       </div>
@@ -253,12 +302,17 @@
           <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=700&auto=format&fit=crop&q=70" alt="Roblox Tycoon">
         </div>
         <div class="proj-body">
-          <div class="proj-badge-row"><span class="badge badge-gray">Ve vývoji</span></div>
+          <div class="proj-badge-row">
+            <span class="badge badge-gray" data-cs="Ve vývoji" data-en="In development">Ve vývoji</span>
+          </div>
           <div class="proj-name">Roblox Tycoon Game</div>
-          <div class="proj-desc">Tycoon hra v Roblox Studiu s vlastními herními mechanikami, ekonomikou a UI systémem. Stále ve vývoji.</div>
+          <div class="proj-desc"
+            data-cs="Tycoon hra v Roblox Studiu s vlastními herními mechanikami, ekonomikou a UI systémem. Stále ve vývoji."
+            data-en="Tycoon game in Roblox Studio with custom game mechanics, economy and UI system. Still in development.">
+            Tycoon hra v Roblox Studiu s vlastními herními mechanikami, ekonomikou a UI systémem. Stále ve vývoji.</div>
           <div class="proj-foot">
             <div class="proj-tags"><span class="tag">Lua</span><span class="tag">Roblox</span></div>
-            <a href="#" class="proj-link">Brzy →</a>
+            <a href="#" class="proj-link" data-cs="Brzy →" data-en="Coming soon →">Brzy →</a>
           </div>
         </div>
       </div>
@@ -270,8 +324,8 @@
 <section class="certs-section">
   <div class="container">
     <div class="section-hd c reveal">
-      <div class="section-eyebrow">Certifikace</div>
-      <h2 class="section-title">Ověřené znalosti</h2>
+      <div class="section-eyebrow" data-cs="Certifikace" data-en="Certifications">Certifikace</div>
+      <h2 class="section-title" data-cs="Ověřené znalosti" data-en="Verified knowledge">Ověřené znalosti</h2>
     </div>
     <div class="g2">
       <a class="cert-card reveal" href="https://www.credly.com/users/matej-kulisek/badges" target="_blank">
@@ -279,15 +333,15 @@
         <div>
           <div class="cert-name">Cisco Certified Network Associate (CCNA)</div>
           <div class="cert-issuer">Cisco Systems</div>
-          <span class="badge badge-blue">Ověřit na Credly ↗</span>
+          <span class="badge badge-blue" data-cs="Ověřit na Credly ↗" data-en="Verify on Credly ↗">Ověřit na Credly ↗</span>
         </div>
       </a>
       <div class="cert-card reveal">
         <div class="cert-icon">🛡️</div>
         <div>
-          <div class="cert-name">Kurz CompTIA Security+</div>
+          <div class="cert-name" data-cs="Kurz CompTIA Security+" data-en="CompTIA Security+ Course">Kurz CompTIA Security+</div>
           <div class="cert-issuer">NETACAD · FEL ČVUT · ID: 8k5NiD68AB</div>
-          <span class="badge badge-green">✓ Ověřeno</span>
+          <span class="badge badge-green" data-cs="✓ Ověřeno" data-en="✓ Verified">✓ Ověřeno</span>
         </div>
       </div>
     </div>
@@ -298,11 +352,17 @@
 <section>
   <div class="container" style="text-align:center;">
     <div class="reveal">
-      <h2 class="section-title" style="margin-bottom:0.75rem;">Zajímá vás spolupráce?</h2>
-      <p style="color:var(--ink-2);margin-bottom:1.75rem;">Podívejte se na moje služby nebo mi rovnou napište.</p>
+      <h2 class="section-title" style="margin-bottom:0.75rem;"
+        data-cs="Zajímá vás spolupráce?" data-en="Interested in working together?">Zajímá vás spolupráce?</h2>
+      <p style="color:var(--ink-2);margin-bottom:1.75rem;"
+        data-cs="Podívejte se na moje služby nebo mi rovnou napište."
+        data-en="Check out my services or send me a message directly.">
+        Podívejte se na moje služby nebo mi rovnou napište.</p>
       <div style="display:flex;gap:0.85rem;justify-content:center;flex-wrap:wrap;">
-        <a href="services.html" class="btn btn-primary">Přehled služeb →</a>
-        <a href="contact.html" class="btn btn-secondary">Kontaktovat mě</a>
+        <a href="services.html" class="btn btn-primary"
+          data-cs="Přehled služeb →" data-en="View services →">Přehled služeb →</a>
+        <a href="contact.html" class="btn btn-secondary"
+          data-cs="Kontaktovat mě" data-en="Contact me">Kontaktovat mě</a>
       </div>
     </div>
   </div>
@@ -311,11 +371,31 @@
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-brand"><div class="f-logo">Matěj Kulíšek</div><p>IT student & freelance developer.</p></div>
-      <div class="footer-col"><h4>Navigace</h4><ul><li><a href="index.html">Domů</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="services.html">Služby</a></li><li><a href="contact.html">Kontakt</a></li></ul></div>
-      <div class="footer-col"><h4>Kontakt</h4><ul><li><a href="mailto:matej.kulisek99@icloud.com">matej.kulisek99@icloud.com</a></li><li><a href="https://github.com/Kulisekmatej" target="_blank">github.com/Kulisekmatej</a></li></ul></div>
+      <div class="footer-brand">
+        <div class="f-logo">Matěj Kulíšek</div>
+        <p data-cs="IT student & freelance developer." data-en="IT student & freelance developer.">IT student & freelance developer.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-cs="Navigace" data-en="Navigation">Navigace</h4>
+        <ul>
+          <li><a href="index.html" data-cs="Domů" data-en="Home">Domů</a></li>
+          <li><a href="portfolio.html" data-cs="Portfolio" data-en="Portfolio">Portfolio</a></li>
+          <li><a href="services.html" data-cs="Služby" data-en="Services">Služby</a></li>
+          <li><a href="contact.html" data-cs="Kontakt" data-en="Contact">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-cs="Kontakt" data-en="Contact">Kontakt</h4>
+        <ul>
+          <li><a href="mailto:matej.kulisek99@icloud.com">matej.kulisek99@icloud.com</a></li>
+          <li><a href="https://github.com/Kulisekmatej" target="_blank">github.com/Kulisekmatej</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="footer-bottom"><span>© 2026 Matěj Kulíšek · IČO: 24617334</span><span>IT Student & Freelance Developer · ČR</span></div>
+    <div class="footer-bottom">
+      <span>© 2026 Matěj Kulíšek · IČO: XXXXXXXX</span>
+      <span data-cs="IT Student & Freelance Developer · ČR" data-en="IT Student & Freelance Developer · Czech Republic">IT Student & Freelance Developer · ČR</span>
+    </div>
   </div>
 </footer>
 
@@ -328,5 +408,4 @@
   const navLinks = document.querySelector('.nav-links');
   if(toggle && navLinks) toggle.addEventListener('click', () => { const open = navLinks.style.display==='flex'; navLinks.style.cssText = open ? '' : 'display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:1rem 1.5rem;gap:0.25rem;'; });
 </script>
-</body>
-</html>
+<script src="lang.js"></script>
